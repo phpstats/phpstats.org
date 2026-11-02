@@ -34,7 +34,7 @@ return [
      * without an entry show the overview from config/projects.php only.
      */
     'content' => [
-        'phibble' => ['repo' => 'phpstats/phibble', 'ref' => '364d213f31130f0e89744fb4dad9361e3f11df3c'],
+        'phibble' => ['repo' => 'phpstats/phibble', 'ref' => 'e350356c2a612982bcce327c3449336ea18c3aa3'],
         'phpolars' => ['repo' => 'phpstats/phpolars', 'ref' => '910ad31e8d3056e555ec70934f9f3e8a1f8147ce'],
         'phplyr' => ['repo' => 'phpstats/phplyr', 'ref' => 'c3cbe27130f25caf63c0b707ca86a03f79689b36'],
         'phit' => ['repo' => 'phpstats/phit', 'ref' => '92434181d297eec2ac11c1f7b56af66aeb136a37'],
