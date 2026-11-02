@@ -15,6 +15,10 @@
 @props(['value', 'label' => null])
 
 @php
+    $value = \App\Content\Stats::plain($value);
+    if (is_array($value) && isset($value['fit'])) {
+        $value['fit'] = \App\Content\Stats::plain($value['fit']);
+    }
     // Rendered markup is shown as it is; everything else is printed as text.
     $html = is_array($value) && isset($value['html']) ? $value['html'] : null;
     $spec = match (true) {

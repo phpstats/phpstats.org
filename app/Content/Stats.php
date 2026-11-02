@@ -5,6 +5,17 @@ namespace App\Content;
 /** Counts across the family's synced content, for the landing and Markdown pages. */
 class Stats
 {
+    /**
+     * A phit fit as its array: phit 0.6 returns fit objects (with toArray()),
+     * earlier versions arrays. Any other value is returned unchanged.
+     */
+    public static function plain(mixed $value): mixed
+    {
+        return is_object($value) && method_exists($value, 'toArray') && str_starts_with($value::class, 'Phit\\')
+            ? $value->toArray()
+            : $value;
+    }
+
     /** @return array{packages: int, verified: int, comparisons: int, examples: int, benchmarks: int} */
     public static function family(): array
     {

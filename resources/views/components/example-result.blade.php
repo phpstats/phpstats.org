@@ -1,5 +1,6 @@
 {{-- An example's return value: a data frame, a phiz plot, a phit fit, or anything else printed. --}}
 @props(['value'])
+@php($value = \App\Content\Stats::plain($value))
 
 @if ($value instanceof \Phiz\Plot)
     <x-phiz :plot="$value->width('container')->height(280)" class="w-full" />

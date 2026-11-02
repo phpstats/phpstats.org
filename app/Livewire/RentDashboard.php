@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Content\Stats;
 use App\Data\SimulatedRentals;
 use App\Models\SimulatedRental;
 use Livewire\Component;
@@ -81,7 +82,7 @@ class RentDashboard extends Component
             $error = 'Every selected rental is '.($over === 0 ? 'within' : 'over').' the budget, so there is no outcome to model.';
         } else {
             try {
-                $model = $rentals |> glm($formula, family: 'binomial');
+                $model = Stats::plain($rentals |> glm($formula, family: 'binomial'));
                 if (! $model['converged']) {
                     [$model, $error] = [null, 'The logistic model did not converge for this selection.'];
                 }

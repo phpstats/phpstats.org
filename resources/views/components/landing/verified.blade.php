@@ -47,7 +47,7 @@
 
     // Each fitted model's rows: its coefficients by term, then the extra
     // quantities listed as [label, phit's key or getter, the references' key].
-    $model = fn (array $extras) => function (array $fit, array $refs) use ($extras) {
+    $model = fn (array $extras) => function (array|\ArrayAccess $fit, array $refs) use ($extras) {
         $rows = [];
         foreach ($fit['columns'] as $i => $term) {
             $rows[] = [$term, $fit['coefficients'][$i], array_map(fn ($r) => $r === null ? null : $r['coefficients'][$i], $refs), true];
@@ -58,7 +58,7 @@
 
         return $rows;
     };
-    $groupVariance = fn (array $fit) => $fit['random'][0]['covariance'][0][0] ?? $fit['random_intercept_variance'];
+    $groupVariance = fn (array|\ArrayAccess $fit) => $fit['random'][0]['covariance'][0][0] ?? $fit['random_intercept_variance'];
     $python = 'statsmodels (Python)';
 
     $panels = [

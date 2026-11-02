@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Content\Stats;
 use App\Models\StudentScore;
 use Livewire\Component;
 use Phibble\DataFrame;
@@ -45,8 +46,8 @@ class SchoolEffects extends Component
 
         $scores = DataFrame::fromQuery(StudentScore::query());
 
-        $mixed = fit_mixed_gaussian(self::FORMULA, $scores, reml: $this->reml);
-        $noPooling = $scores |> lm(self::NO_POOLING_FORMULA);
+        $mixed = Stats::plain(fit_mixed_gaussian(self::FORMULA, $scores, reml: $this->reml));
+        $noPooling = Stats::plain($scores |> lm(self::NO_POOLING_FORMULA));
 
         $random = $mixed['random'][0];
         $intercept = $mixed['named']['(Intercept)'];
