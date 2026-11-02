@@ -686,7 +686,7 @@
                 },
                 {
                     "id": "how-they-coexist",
-                    "text": "How they coexist",
+                    "text": "Coexistence",
                     "level": 2
                 },
                 {
@@ -1045,6 +1045,21 @@
                     "id": "tidy",
                     "text": "tidy()",
                     "level": 3
+                },
+                {
+                    "id": "objects",
+                    "text": "Fit and table objects",
+                    "level": 2
+                },
+                {
+                    "id": "Fit",
+                    "text": "Phit\\Fit",
+                    "level": 3
+                },
+                {
+                    "id": "Table",
+                    "text": "Phit\\Table",
+                    "level": 3
                 }
             ],
             "math": false
@@ -1253,7 +1268,7 @@
                 },
                 {
                     "id": "how-pie-installs-phit",
-                    "text": "How PIE installs phit",
+                    "text": "PIE installation",
                     "level": 2
                 },
                 {
@@ -1605,7 +1620,7 @@
                 },
                 {
                     "id": "why-model-log-odds-instead-of-the-outcome-directly",
-                    "text": "2. Why model log-odds instead of the outcome directly?",
+                    "text": "2. The log-odds scale",
                     "level": 2
                 },
                 {
@@ -1692,7 +1707,7 @@
             "headings": [
                 {
                     "id": "where-these-data-come-from",
-                    "text": "Where these data come from",
+                    "text": "Data source",
                     "level": 3
                 },
                 {
@@ -1702,7 +1717,7 @@
                 },
                 {
                     "id": "what-does-fitting-minimize",
-                    "text": "1. What does fitting minimize?",
+                    "text": "1. The least-squares objective",
                     "level": 2
                 },
                 {
@@ -1717,17 +1732,17 @@
                 },
                 {
                     "id": "what-problem-does-svd-help-us-understand",
-                    "text": "What problem does SVD help us understand?",
+                    "text": "The role of the SVD",
                     "level": 3
                 },
                 {
                     "id": "why-scale-the-columns-first",
-                    "text": "Why scale the columns first?",
+                    "text": "Column scaling",
                     "level": 3
                 },
                 {
                     "id": "what-do-u-s-and-v-mean",
-                    "text": "What do U, S and V mean?",
+                    "text": "U, S, and V",
                     "level": 3
                 },
                 {
@@ -1737,7 +1752,7 @@
                 },
                 {
                     "id": "why-small-singular-values-matter",
-                    "text": "Why small singular values matter",
+                    "text": "Small singular values",
                     "level": 3
                 },
                 {
@@ -1762,7 +1777,7 @@
                 },
                 {
                     "id": "verify-what-we-calculated",
-                    "text": "7. Verify what we calculated",
+                    "text": "7. Verification",
                     "level": 2
                 },
                 {

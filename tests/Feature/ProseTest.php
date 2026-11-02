@@ -143,12 +143,14 @@ class ProseTest extends TestCase
         $text = preg_replace('#<x-slot:(pipe|chain)>.*?</x-slot(?::\1)?>#s', '', $text);
         $text = preg_replace('/<[^>]*>/', '', $text);
 
+        // An R name such as print.data.frame() is code, not prose: a dot
+        // before the word excludes it.
         // Collapsed, so copy wrapped between "data" and "frames" still reads
         // as one phrase.
         $text = preg_replace('/\s+/', ' ', $text);
 
         preg_match_all(
-            '/(?<![\w$\\\\\\/-])(?<!data )frames?(?![\w$\\\\\\/-])/i',
+            '/(?<![\w$\\\\\\/.-])(?<!data )frames?(?![\w$\\\\\\/-])/i',
             $text,
             $matches,
             PREG_OFFSET_CAPTURE,

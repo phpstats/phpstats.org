@@ -47,10 +47,10 @@
 </table>
 <section id="versions" class="level2">
 <h2 class="anchored" data-anchor-id="versions">Versions</h2>
-<p>Each polyfill release reproduces one phit release. Polyfill 0.5.1 reproduces phit v0.5.1 and provides 234 of its 235 functions.</p>
+<p>Each polyfill release reproduces one phit release. Polyfill 0.6.0 reproduces phit v0.6.0 and provides 234 of its 235 functions.</p>
 </section>
 <section id="how-they-coexist" class="level2">
-<h2 class="anchored" data-anchor-id="how-they-coexist">How they coexist</h2>
+<h2 class="anchored" data-anchor-id="how-they-coexist">Coexistence</h2>
 <ul>
 <li>Composer loads the polyfill’s <code>bootstrap.php</code> through its <code>files</code> autoload. If <code>extension_loaded('phit')</code> is true, the bootstrap defines nothing, so every <code>Phit\</code> function is the extension’s. Installing both is safe.</li>
 <li>The polyfill does not fill gaps in an older extension. If the loaded extension is older than the polyfill’s phit release, functions added since then stay undefined.</li>
@@ -74,7 +74,7 @@
 <tbody>
 <tr class="odd">
 <td>Formula models and prediction</td>
-<td><code>model_matrix</code>, <code>fit_ols</code>, <code>fit_generalized_linear</code>, <code>fit_mixed_gaussian</code>, <code>fit_mixed_logistic</code>, and <code>predict</code>, with a port of the formula parser</td>
+<td><code>model_matrix</code>, <code>fit_ols</code>, <code>fit_generalized_linear</code>, <code>fit_mixed_gaussian</code>, <code>fit_mixed_logistic</code>, and <code>predict</code>, with a PHP implementation of the formula parser</td>
 </tr>
 <tr class="even">
 <td>Matrix models</td>
