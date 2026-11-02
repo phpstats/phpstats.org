@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e8bc4d695f3f93dec6f14d6d4c35746",
+    "content-hash": "66c84bc84a6ddeeb384b6cbce2cc7959",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2898,16 +2898,16 @@
         },
         {
             "name": "phpstats/phibble",
-            "version": "v0.7.0",
+            "version": "v0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstats/phibble.git",
-                "reference": "7cf161c27b0f91cc7b592ecf8caf5e5ec2b999bd"
+                "reference": "9e63ca5eb9128838c22d86b304db4c964edd567c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstats/phibble/zipball/7cf161c27b0f91cc7b592ecf8caf5e5ec2b999bd",
-                "reference": "7cf161c27b0f91cc7b592ecf8caf5e5ec2b999bd",
+                "url": "https://api.github.com/repos/phpstats/phibble/zipball/9e63ca5eb9128838c22d86b304db4c964edd567c",
+                "reference": "9e63ca5eb9128838c22d86b304db4c964edd567c",
                 "shasum": ""
             },
             "require": {
@@ -2924,7 +2924,7 @@
             },
             "suggest": {
                 "ext-pdo_sqlite": "Used by the test suite for the PDO source",
-                "ext-phit": "Native CSV reading with Phit\\read_csv (phit 0.1.1 or later) and Phit\\CsvReader for chunks (phit 0.2.0 or later), from phpstats/phit",
+                "ext-phit": "Native CSV reading with Phit\\read_csv and Phit\\CsvReader (phit 0.4.0 or later), from phpstats/phit",
                 "ext-php_polars": "The Polars backend (Phibble\\Polars\\PolarsTable), from phpstats/phpolars",
                 "illuminate/database": "Laravel integration: Collection::toDataFrame() and query builder ->phibble() / ->toDataFrame() macros (auto-discovered)"
             },
@@ -2952,9 +2952,9 @@
             "description": "A typed, immutable in-memory data frame for PHP.",
             "support": {
                 "issues": "https://github.com/phpstats/phibble/issues",
-                "source": "https://github.com/phpstats/phibble/tree/v0.7.0"
+                "source": "https://github.com/phpstats/phibble/tree/v0.8.0"
             },
-            "time": "2026-11-01T23:48:55+00:00"
+            "time": "2026-11-02T12:10:18+00:00"
         },
         {
             "name": "phpstats/phiz",
@@ -3030,22 +3030,22 @@
         },
         {
             "name": "phpstats/phplyr",
-            "version": "v0.4.7",
+            "version": "v0.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstats/phplyr.git",
-                "reference": "3930beee5a8b9d7a17216889e90c0e5f8bc0e233"
+                "reference": "65e6a462be620a018290b38c96148327c62aaf23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstats/phplyr/zipball/3930beee5a8b9d7a17216889e90c0e5f8bc0e233",
-                "reference": "3930beee5a8b9d7a17216889e90c0e5f8bc0e233",
+                "url": "https://api.github.com/repos/phpstats/phplyr/zipball/65e6a462be620a018290b38c96148327c62aaf23",
+                "reference": "65e6a462be620a018290b38c96148327c62aaf23",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "php": ">=8.3 <8.6",
-                "phpstats/phibble": "^0.3 || ^0.4 || ^0.5 || ^0.6 || ^0.7",
+                "phpstats/phibble": "^0.3 || ^0.4 || ^0.5 || ^0.6 || ^0.7 || ^0.8",
                 "symfony/polyfill-php84": "^1.31"
             },
             "require-dev": {
@@ -3084,9 +3084,9 @@
             "description": "A dplyr-style grammar of data manipulation for PHP 8.3+, with method chains or PHP 8.5 pipes",
             "support": {
                 "issues": "https://github.com/phpstats/phplyr/issues",
-                "source": "https://github.com/phpstats/phplyr/tree/v0.4.7"
+                "source": "https://github.com/phpstats/phplyr/tree/v0.4.8"
             },
-            "time": "2026-11-02T02:36:09+00:00"
+            "time": "2026-11-02T12:11:45+00:00"
         },
         {
             "name": "psr/clock",

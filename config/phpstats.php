@@ -34,9 +34,9 @@ return [
      * without an entry show the overview from config/projects.php only.
      */
     'content' => [
-        'phibble' => ['repo' => 'phpstats/phibble', 'ref' => 'd855cfb60e2a29939a7494ad00f84a8a8d3de8bc'],
+        'phibble' => ['repo' => 'phpstats/phibble', 'ref' => '9e63ca5eb9128838c22d86b304db4c964edd567c'],
         'phpolars' => ['repo' => 'phpstats/phpolars', 'ref' => '5a73b2b944b5c465beacef7febe06b4cdad95bf5'],
-        'phplyr' => ['repo' => 'phpstats/phplyr', 'ref' => 'b484153c4ec63837c59f63ce1cf757da3bf45610'],
+        'phplyr' => ['repo' => 'phpstats/phplyr', 'ref' => '65e6a462be620a018290b38c96148327c62aaf23'],
         'phit' => ['repo' => 'phpstats/phit', 'ref' => 'c60fb9b9238ea9b128f22b0e5ef31802336d31f5'],
         'phiz' => ['repo' => 'phpstats/phiz', 'ref' => '7ea534d7867efa732531986f90c053f85da93af8'],
         'cmdstanphp' => ['repo' => 'phpstats/CmdStanPHP', 'ref' => '17ad5fd12418d49b6c6d69d3b5eae21429c5f582'],

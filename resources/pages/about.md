@@ -40,8 +40,7 @@ Each package documents its checks:
 <h2 id="ai-statement">AI statement</h2>
 
 PHPstats was developed with AI assistance. Large language models wrote and
-revised much of the code and documentation, directed and reviewed by Erik
-Westlund. Rebuilding the methods of established R, Python, and Stan packages
+revised much of the code and documentation. Rebuilding the methods of established R, Python, and Stan packages
 in PHP by hand would not be practical for one person.
 
 Credit for those methods belongs to the authors of the original packages,

@@ -21,7 +21,7 @@
             "section": "Guides"
         },
         {
-            "title": "Porting an R script",
+            "title": "Translate an R script",
             "path": "port-r-script",
             "section": "Guides"
         },
@@ -335,7 +335,7 @@
             "math": false
         },
         "port-r-script": {
-            "title": "Porting an R script",
+            "title": "Translate an R script",
             "headings": [
                 {
                     "id": "r",
