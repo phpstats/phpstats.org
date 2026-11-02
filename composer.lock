@@ -2958,16 +2958,16 @@
         },
         {
             "name": "phpstats/phiz",
-            "version": "v0.6.0",
+            "version": "v0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstats/phiz.git",
-                "reference": "c05aceb9ecaf51c593ab96aae21c09fbb6b080e0"
+                "reference": "1711ce6569e935b154e1e3e114e3a1d6e0ed79ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstats/phiz/zipball/c05aceb9ecaf51c593ab96aae21c09fbb6b080e0",
-                "reference": "c05aceb9ecaf51c593ab96aae21c09fbb6b080e0",
+                "url": "https://api.github.com/repos/phpstats/phiz/zipball/1711ce6569e935b154e1e3e114e3a1d6e0ed79ec",
+                "reference": "1711ce6569e935b154e1e3e114e3a1d6e0ed79ec",
                 "shasum": ""
             },
             "require": {
@@ -3024,9 +3024,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstats/phiz/issues",
-                "source": "https://github.com/phpstats/phiz/tree/v0.6.0"
+                "source": "https://github.com/phpstats/phiz/tree/v0.6.1"
             },
-            "time": "2026-11-02T02:46:15+00:00"
+            "time": "2026-11-02T11:12:24+00:00"
         },
         {
             "name": "phpstats/phplyr",

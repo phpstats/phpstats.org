@@ -16,6 +16,7 @@ $monthly = phplyr($temps)
 $chart = \Phiz\Plot::of($monthly)
     ->aes(x: 'month', y: 'temp_c', color: 'city')
     ->line()
+    ->scaleX(format: '%b')
     ->labs(x: 'Month', y: 'Mean temperature (°C)', color: 'City');
 
 echo $monthly;
