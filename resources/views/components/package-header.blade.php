@@ -43,7 +43,7 @@
         </nav>
 
         <div class="ml-auto flex items-center gap-1">
-            <x-group-menu :menu="['title' => 'PHPstats Packages', 'short' => 'Packages', 'layers' => array_merge(...array_column(config('phpstats.menus'), 'layers'))]" :current="$package" align="right" />
+            <x-group-menu :menu="['title' => 'PHPstats Packages', 'short' => 'PHPstats Packages', 'layers' => array_merge(...array_column(config('phpstats.menus'), 'layers'))]" :current="$package" align="right" />
             <x-theme-toggle />
             @if ($package->repository())
                 {{-- Below 420px the bar has no room for it; the overview links the repository too. --}}

@@ -15,12 +15,11 @@ return [
     'inject_scripts' => false,
 
     /*
-     * Default vega-embed options for every chart. 'theme' => 'auto' follows the visitor's light or dark
-     * mode preference.
+     * Default vega-embed options for every chart. There is no 'theme': phiz's loader follows the `dark`
+     * class on <html>, which the theme toggle sets, so a light choice on a dark system stays light.
      */
     'embed_options' => [
         'actions' => false,
-        'theme' => 'auto',
         // The site's palette: PHP purple first, then violet, pink, indigo, and contrasting accents.
         'config' => [
             'background' => 'transparent',
