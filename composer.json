@@ -13,7 +13,7 @@
         "livewire/livewire": "^4.4",
         "phpstats/cmdstanphp": "^0.1.2",
         "phpstats/phibble": "^0.7",
-        "phpstats/phiz": "^0.5",
+        "phpstats/phiz": "^0.6",
         "phpstats/phplyr": "^0.4.3",
         "symfony/yaml": "^8.1",
         "tempest/highlight": "^2.28"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f79ca3ca15a9fcff83276dc5f9e6e6c",
+    "content-hash": "3e8bc4d695f3f93dec6f14d6d4c35746",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2958,16 +2958,16 @@
         },
         {
             "name": "phpstats/phiz",
-            "version": "v0.5.2",
+            "version": "v0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstats/phiz.git",
-                "reference": "23e8608988ea5aa136925e0e165e7bad68459000"
+                "reference": "c05aceb9ecaf51c593ab96aae21c09fbb6b080e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstats/phiz/zipball/23e8608988ea5aa136925e0e165e7bad68459000",
-                "reference": "23e8608988ea5aa136925e0e165e7bad68459000",
+                "url": "https://api.github.com/repos/phpstats/phiz/zipball/c05aceb9ecaf51c593ab96aae21c09fbb6b080e0",
+                "reference": "c05aceb9ecaf51c593ab96aae21c09fbb6b080e0",
                 "shasum": ""
             },
             "require": {
@@ -2978,8 +2978,8 @@
                 "opis/json-schema": "^2.4",
                 "orchestra/testbench": "^10.0",
                 "pestphp/pest": "^4.0",
-                "phpstats/phibble": "^0.5 || ^0.6",
-                "phpstats/phit-polyfill": "^0.3",
+                "phpstats/phibble": "^0.5 || ^0.6 || ^0.7",
+                "phpstats/phit-polyfill": "^0.4",
                 "phpstats/phplyr": "^0.4",
                 "squizlabs/php_codesniffer": "^3.13"
             },
@@ -3024,9 +3024,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstats/phiz/issues",
-                "source": "https://github.com/phpstats/phiz/tree/v0.5.2"
+                "source": "https://github.com/phpstats/phiz/tree/v0.6.0"
             },
-            "time": "2026-11-01T14:20:27+00:00"
+            "time": "2026-11-02T02:46:15+00:00"
         },
         {
             "name": "phpstats/phplyr",

@@ -13,6 +13,7 @@
 <h2 class="anchored" data-anchor-id="in-the-browser">In the browser</h2>
 <p><code>embed()</code> returns a chart container followed by the script tags, and <code>html()</code> returns a complete page. Both take vega-embed options, such as <code>['actions' =&gt; false]</code> or <code>['renderer' =&gt; 'svg']</code>.</p>
 <p>The container holds the specification in a <code>data-phiz</code> attribute. phiz’s loader script draws every such container with vega-embed and redraws it when the attribute changes, so the same markup works in static pages, Blade views, and Livewire components.</p>
+<p>Charts follow the page’s dark mode. The page is dark when <code>&lt;html&gt;</code> has the class <code>dark</code>, or, with the vega-embed option <code>['theme' =&gt; 'auto']</code>, when the system prefers a dark color scheme. In dark mode the loader applies a dark variant of the chart’s theme: a transparent background, muted grid lines, light text, and lighter default marks, fitted lines, and bands. Tooltips are dark too. Colors set explicitly on a layer or scale are kept, and <code>theme('dark')</code> charts are unchanged. Charts redraw when the page switches.</p>
 </section>
 <section id="library-sources-and-offline-pages" class="level2">
 <h2 class="anchored" data-anchor-id="library-sources-and-offline-pages">Library sources and offline pages</h2>
