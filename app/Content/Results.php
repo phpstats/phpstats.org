@@ -389,6 +389,24 @@ class Results
     }
 
     /** A tolerance as written in a criterion: 1e-9 rather than 1.0e-9, and 1 for one. */
+    /**
+     * An operating system as records write it, in one readable form:
+     * Python's platform.platform() "macOS-27.0.1-arm64-arm-64bit-Mach-O" and
+     * uname's "Darwin 27.0.0 (arm64)" become "macOS 27.0.1 (arm64)" and
+     * "macOS (arm64)", and "Linux, Ubuntu 24.04.5 LTS (x86_64)" drops "Linux, ".
+     */
+    public static function os(string $os): string
+    {
+        if (preg_match('/^macOS-([\d.]+)-(arm64|x86_64)\b/', $os, $m)) {
+            return "macOS {$m[1]} ({$m[2]})";
+        }
+        if (preg_match('/^Darwin [\d.]+ \((\w+)\)$/', $os, $m)) {
+            return "macOS ({$m[1]})";
+        }
+
+        return preg_replace('/^Linux, /', '', $os);
+    }
+
     public static function tolerance(float $value): string
     {
         if ($value >= 0.001 && $value < 1e4) {

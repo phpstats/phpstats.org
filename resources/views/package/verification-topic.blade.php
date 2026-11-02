@@ -33,7 +33,7 @@
     $recorded = implode(', ', array_filter([
         isset($env['date']) ? Str::before($env['date'], 'T') : null,
         isset($env['php']) ? 'PHP '.$env['php'] : null,
-        $env['os'] ?? null,
+        isset($env['os']) ? Results::os((string) $env['os']) : null,
         isset($env['commit']) ? 'commit '.substr($env['commit'], 0, 7) : null,
     ]));
     $reproduce = array_values(array_filter((array) ($record['reproduce'] ?? []), 'is_string'));
@@ -158,12 +158,18 @@
             @if ($rules === [])
                 <p class="mt-2 text-sm text-zinc-700 dark:text-zinc-300">Not stated in the record.</p>
             @else
-                <dl class="{{ $dl }}">
+                {{-- Each rule: its criterion, then what it applies to, which can be a long list. --}}
+                <div class="mt-4 space-y-3">
                     @foreach ($rules as $rule)
-                        <dt class="{{ $dt }}">{{ $rule['applies_to'] ? Str::ucfirst(Str::before($rule['applies_to'], ';')) : ($rule['id'] ?? 'All values') }}</dt>
-                        <dd class="{{ $dd }} font-mono text-[0.8125rem]">{!! $mono($rule['text']) !!}@if ($rule['applies_to'] && str_contains($rule['applies_to'], ';'))<span class="block font-sans text-xs text-zinc-500 dark:text-zinc-400">{{ Str::ucfirst(trim(Str::after($rule['applies_to'], ';'))) }}</span>@endif</dd>
+                        <div class="rounded-xl px-5 py-4 ring-1 ring-zinc-200 dark:ring-white/10">
+                            <p class="font-mono text-sm text-zinc-900 dark:text-zinc-100">{!! $mono($rule['text']) !!}</p>
+                            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400"><span class="font-medium text-zinc-800 dark:text-zinc-200">Applies to:</span> {{ $rule['applies_to'] ? Str::ucfirst(trim(Str::before($rule['applies_to'], ';'))) : ($rule['id'] ?? 'all values') }}</p>
+                            @if ($rule['applies_to'] && str_contains($rule['applies_to'], ';'))
+                                <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{{ Str::ucfirst(trim(Str::after($rule['applies_to'], ';'))) }}</p>
+                            @endif
+                        </div>
                     @endforeach
-                </dl>
+                </div>
             @endif
             @if ($rules !== [] || array_intersect(['max_abs_error', 'max_rel_error'], $columns))
             <p class="mt-3 max-w-3xl text-sm text-zinc-600 dark:text-zinc-400">

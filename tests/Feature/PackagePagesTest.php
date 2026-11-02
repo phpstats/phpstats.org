@@ -465,7 +465,7 @@ class PackagePagesTest extends TestCase
         $phibble = Package::find('phibble');
         $api = $phibble->apiReference();
         $html = $this->get($phibble->url())->assertOk()->getContent();
-        $this->assertGreaterThanOrEqual(2, substr_count($html, 'href="'.e($api['url']).'"'));
+        $this->assertSame(1, substr_count($html, 'href="'.e($api['url']).'"'));
         $this->assertStringContainsString('Functions and methods', $html);
 
         // Without such a section: no link, and the docs card reads Documentation.

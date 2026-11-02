@@ -1,15 +1,15 @@
 @php
     $layer = $package->layer();
     $verified = collect($package->verifications())->flatMap(fn ($v) => $v['cases'] ?? []);
-    $count = fn (int $n, string $noun, string $rest = '') => $n.' '.\Illuminate\Support\Str::plural($noun, $n).$rest;
+    $count = fn (int $n, string $noun, string $rest = '') => number_format($n).' '.\Illuminate\Support\Str::plural($noun, $n).$rest;
     $agreeing = $verified->filter(fn ($case) => \App\Content\Results::status($case) === 'pass')->count();
     $api = $package->apiReference();
     $sections = array_filter([
         'docs' => $package->hasDocs() ? ['Documentation', 'book-open', $count(count($package->docsNav()), 'page')] : null,
         'api' => $api ? [$api['title'], 'code-bracket', 'Every public '.strtolower($api['title']).', grouped by task', $api['url']] : null,
-        'examples' => $package->listedExamples() ? ['Examples', 'play-circle', count($package->listedExamples()).' short, runnable '.\Illuminate\Support\Str::plural('example', count($package->listedExamples()))] : null,
+        'examples' => $package->listedExamples() ? ['Examples', 'squares-2x2', count($package->listedExamples()).' short, runnable '.\Illuminate\Support\Str::plural('example', count($package->listedExamples()))] : null,
         'benchmarks' => $package->benchmarks() ? ['Benchmarks', 'clock', $count(count($package->benchmarks()), 'workload')] : null,
-        'verification' => $package->verifications() ? ['Verification', 'check-badge', number_format($agreeing).' of '.$count($verified->count(), 'comparison').' '.($verified->count() === 1 ? 'passes' : 'pass')] : null,
+        'verification' => $package->verifications() ? ['Verification', 'check-badge', $agreeing === $verified->count() ? ($agreeing === 1 ? '1 comparison passes' : 'All '.$count($agreeing, 'comparison').' pass') : number_format($agreeing).' of '.$count($verified->count(), 'comparison').' pass'] : null,
     ]);
     $relations = collect($package->relations())->groupBy('kind');
 @endphp
@@ -29,14 +29,9 @@
                             <x-heroicon-m-book-open class="size-4" /> Read the docs
                         </a>
                     @endif
-                    @if ($api)
-                        <a href="{{ $api['url'] }}" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 ring-1 ring-zinc-200 transition hover:ring-(--l300) dark:bg-white/5 dark:text-white dark:ring-white/10">
-                            <x-heroicon-m-code-bracket class="size-4 text-(--l500)" /> {{ $api['title'] }}
-                        </a>
-                    @endif
                     @if ($package->listedExamples())
                         <a href="{{ $package->url('examples') }}" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 ring-1 ring-zinc-200 transition hover:ring-(--l300) dark:bg-white/5 dark:text-white dark:ring-white/10">
-                            <x-heroicon-m-play-circle class="size-4 text-(--l500)" /> Try an example
+                            <x-heroicon-m-squares-2x2 class="size-4 text-(--l500)" /> See examples
                         </a>
                     @endif
                     @if ($package->repository())
@@ -116,7 +111,7 @@
             @php [$lead, $more] = [array_slice($package->summary(), 0, 1), array_slice($package->summary(), 1)]; @endphp
             <div class="prose prose-zinc prose-php max-w-none text-[1.0625rem] dark:prose-invert">
                 @foreach ($lead as $paragraph)
-                    <p>{{ $paragraph }}</p>
+                    <p>{!! \App\Content\Markdown::inline($paragraph) !!}</p>
                 @endforeach
             </div>
 
@@ -164,7 +159,7 @@
             @if ($more)
                 <div class="prose prose-zinc prose-php mt-10 max-w-none text-[1.0625rem] dark:prose-invert">
                     @foreach ($more as $paragraph)
-                        <p>{{ $paragraph }}</p>
+                        <p>{!! \App\Content\Markdown::inline($paragraph) !!}</p>
                     @endforeach
                 </div>
             @endif
