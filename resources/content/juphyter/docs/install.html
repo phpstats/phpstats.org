@@ -30,7 +30,7 @@
 </tr>
 <tr class="even">
 <td>phibble, phplyr, and phiz</td>
-<td>Data frame tables and charts. See <a href="#the-phpstats-packages">The phpstats packages</a>.</td>
+<td>Data frame tables and charts. See <a href="#the-phpstats-packages">The PHPstats packages</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -97,10 +97,10 @@
 <p>Putting the Python environment in a startup file makes it the <code>python3</code> for every program, including every Quarto project on the machine. <a href="phpstats://juphyter/docs/python">Python interpreters and editors</a> describes how to select it per editor workspace, per shell, or per Quarto project instead.</p>
 </section>
 <section id="the-phpstats-packages" class="level2">
-<h2 class="anchored" data-anchor-id="the-phpstats-packages">The phpstats packages</h2>
+<h2 class="anchored" data-anchor-id="the-phpstats-packages">The PHPstats packages</h2>
 <p>juphyter does not depend on phibble, phplyr, or phiz. A notebook inside a Composer project that requires them can use them with the <code>php</code> kernel. To use them in notebooks outside any project, install them globally and register a second kernel that loads Composer’s global autoloader:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1" class="code-line" style="--indent: 0ch"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">composer</span> global require phpstats/phibble phpstats/phplyr phpstats/phiz</span><span id="cb6-2" class="code-line" style="--indent: 0ch"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">juphyter</span> install <span class="at">--name</span> phpstats <span class="at">--display-name</span> <span class="st">"PHP (phpstats)"</span> <span class="dt">\</span></span><span id="cb6-3" class="code-line" style="--indent: 2ch"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--autoload</span> <span class="st">"</span><span class="va">$(</span><span class="ex">composer</span> global config home<span class="va">)</span><span class="st">/vendor/autoload.php"</span></span></code></pre></div></div>
-<p>Documents name that kernel as <code>jupyter: phpstats</code>, and JupyterLab lists it as “PHP (phpstats)”. A kernel installed with <code>--autoload</code> always loads the autoloader it names, even for a notebook inside a Composer project, which is why it has its own name.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1" class="code-line" style="--indent: 0ch"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">composer</span> global require phpstats/phibble phpstats/phplyr phpstats/phiz</span><span id="cb6-2" class="code-line" style="--indent: 0ch"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">juphyter</span> install <span class="at">--name</span> phpstats <span class="at">--display-name</span> <span class="st">"PHP (PHPstats)"</span> <span class="dt">\</span></span><span id="cb6-3" class="code-line" style="--indent: 2ch"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--autoload</span> <span class="st">"</span><span class="va">$(</span><span class="ex">composer</span> global config home<span class="va">)</span><span class="st">/vendor/autoload.php"</span></span></code></pre></div></div>
+<p>Documents name that kernel as <code>jupyter: phpstats</code>, and JupyterLab lists it as “PHP (PHPstats)”. A kernel installed with <code>--autoload</code> always loads the autoloader it names, even for a notebook inside a Composer project, which is why it has its own name.</p>
 </section>
 <section id="which-classes-a-notebook-sees" class="level2">
 <h2 class="anchored" data-anchor-id="which-classes-a-notebook-sees">Which classes a notebook sees</h2>
