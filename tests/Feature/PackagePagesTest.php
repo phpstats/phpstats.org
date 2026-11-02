@@ -295,11 +295,10 @@ class PackagePagesTest extends TestCase
     {
         foreach (Package::all() as $key => $package) {
             $text = html_entity_decode(strip_tags($this->get($package->url())->assertOk()->getContent()));
-            $this->assertDoesNotMatchRegularExpression('/\b1 (workloads|pages|short, runnable examples|comparisons pass)\b/', $text, $key);
+            $this->assertDoesNotMatchRegularExpression('/\b1 (workloads|pages|comparisons pass)\b/', $text, $key);
 
-            $examples = count($package->listedExamples());
-            if ($examples > 0) {
-                $this->assertStringContainsString($examples.' short, runnable '.($examples === 1 ? 'example' : 'examples'), $text, $key);
+            if ($package->listedExamples()) {
+                $this->assertStringContainsString('Quick examples showing '.$package->name().' in action', $text, $key);
             }
             $benchmarks = count($package->benchmarks());
             if ($benchmarks > 0) {

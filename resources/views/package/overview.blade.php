@@ -7,7 +7,7 @@
     $sections = array_filter([
         'docs' => $package->hasDocs() ? ['Documentation', 'book-open', $count(count($package->docsNav()), 'page')] : null,
         'api' => $api ? [$api['title'], 'code-bracket', 'Every public '.strtolower($api['title']).', grouped by task', $api['url']] : null,
-        'examples' => $package->listedExamples() ? ['Examples', 'squares-2x2', count($package->listedExamples()).' short, runnable '.\Illuminate\Support\Str::plural('example', count($package->listedExamples()))] : null,
+        'examples' => $package->listedExamples() ? ['Examples', 'squares-2x2', 'Quick examples showing '.$package->name().' in action'] : null,
         'benchmarks' => $package->benchmarks() ? ['Benchmarks', 'clock', $count(count($package->benchmarks()), 'workload')] : null,
         'verification' => $package->verifications() ? ['Verification', 'check-badge', $agreeing === $verified->count() ? ($agreeing === 1 ? '1 comparison passes' : 'All '.$count($agreeing, 'comparison').' pass') : number_format($agreeing).' of '.$count($verified->count(), 'comparison').' pass'] : null,
     ]);
