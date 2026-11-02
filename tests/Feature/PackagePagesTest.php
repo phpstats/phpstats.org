@@ -400,9 +400,17 @@ class PackagePagesTest extends TestCase
 
     public function test_verification_topics_show_every_status_in_plain_text(): void
     {
+        // The published records have no skipped case, so a fixture stands in for one.
+        $this->fixtureRecord('phpolars', 'verifications', 'integration', [
+            'title' => 'Integration',
+            'cases' => [
+                ['name' => 'PHP CLI', 'status' => 'pass'],
+                ['name' => 'PHP-FPM', 'status' => 'skipped', 'reason' => 'php-fpm is not installed.'],
+            ],
+        ]);
         $phpolars = Package::find('phpolars');
         $text = html_entity_decode(strip_tags($this->get($phpolars->url('verification.topic', ['id' => 'integration']))->assertOk()->getContent()));
-        $this->assertMatchesRegularExpression('/PHP-FPM.*skipped.*php-fpm or cgi-fcgi is not installed/s', $text);
+        $this->assertMatchesRegularExpression('/PHP-FPM.*skipped.*php-fpm is not installed/s', $text);
         $this->assertStringContainsString('0 fail, 1 skipped', $text);
         $this->assertStringNotContainsString('No comparison failed, and none was skipped.', $text);
 
