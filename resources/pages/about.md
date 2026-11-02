@@ -10,6 +10,15 @@ designed to work well together.
 
 PHPstats was created by [Erik Westlund](https://erik-westlund.academic.page).
 
+## Public beta
+
+PHPstats is in public beta. APIs and behavior may change between releases.
+Pin package versions and check release notes when upgrading.
+
+Please report installation problems, unexpected results, and documentation
+errors in the relevant package's GitHub repository. Each package's site links
+to its repository.
+
 ## Packages
 
 <x-package-table />

@@ -17,6 +17,9 @@
                 <p class="mt-4 max-w-xl text-base leading-7 text-zinc-400">
                     Load, transform, and summarize data from your app using data frames. Work with probability distributions, fit statistical models, and draw beautiful charts without leaving PHP.
                 </p>
+                <p class="mt-4 max-w-xl text-sm leading-6 text-zinc-400">
+                    PHPstats is in public beta. <a href="{{ route('page', 'about') }}#public-beta" class="text-php-300 underline decoration-php-300/40 underline-offset-4 hover:text-php-200">Feedback and bug reports are welcome.</a>
+                </p>
                 <div class="mt-8 flex flex-wrap items-center gap-3">
                     <a href="#packages" class="rounded-full bg-php-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-php-500/30 transition hover:bg-php-400">Explore the packages</a>
                     <a href="{{ route('page', 'installation') }}" class="rounded-full px-5 py-2.5 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/10">Get started</a>
