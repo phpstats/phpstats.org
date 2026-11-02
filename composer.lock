@@ -3030,16 +3030,16 @@
         },
         {
             "name": "phpstats/phplyr",
-            "version": "v0.4.6",
+            "version": "v0.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstats/phplyr.git",
-                "reference": "f11d85c4e6ffbe9286cad4a7bf419d8dc0e57241"
+                "reference": "3930beee5a8b9d7a17216889e90c0e5f8bc0e233"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstats/phplyr/zipball/f11d85c4e6ffbe9286cad4a7bf419d8dc0e57241",
-                "reference": "f11d85c4e6ffbe9286cad4a7bf419d8dc0e57241",
+                "url": "https://api.github.com/repos/phpstats/phplyr/zipball/3930beee5a8b9d7a17216889e90c0e5f8bc0e233",
+                "reference": "3930beee5a8b9d7a17216889e90c0e5f8bc0e233",
                 "shasum": ""
             },
             "require": {
@@ -3054,7 +3054,7 @@
             },
             "suggest": {
                 "ext-intl": "Transliteration in make_clean_names() and clean_names() that matches janitor; without it, iconv is used",
-                "ext-phit": "Native descriptives (Phit\\stat_*) and model fitting (Phit\\fit_*), needed for lm(), glm(), lmer(), and glmer()"
+                "ext-phit": "phit 0.4 or 0.5: native descriptives (Phit\\stat_*) and model fitting (Phit\\fit_*), needed for lm(), glm(), lmer(), and glmer()"
             },
             "type": "library",
             "autoload": {
@@ -3084,9 +3084,9 @@
             "description": "A dplyr-style grammar of data manipulation for PHP 8.3+, with method chains or PHP 8.5 pipes",
             "support": {
                 "issues": "https://github.com/phpstats/phplyr/issues",
-                "source": "https://github.com/phpstats/phplyr/tree/v0.4.6"
+                "source": "https://github.com/phpstats/phplyr/tree/v0.4.7"
             },
-            "time": "2026-11-01T23:50:54+00:00"
+            "time": "2026-11-02T02:36:09+00:00"
         },
         {
             "name": "psr/clock",
