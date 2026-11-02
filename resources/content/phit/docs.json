@@ -664,11 +664,6 @@
             "title": "Fit a mixed model to a Polars table and chart it",
             "headings": [
                 {
-                    "id": "data",
-                    "text": "Data",
-                    "level": 2
-                },
-                {
                     "id": "code",
                     "text": "Code",
                     "level": 2
