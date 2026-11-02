@@ -8,6 +8,8 @@ data transformation, statistical models, Bayesian inference, charts, and
 notebooks. Each package can be installed and used on its own. They are
 designed to work well together.
 
+PHPstats was created by [Erik Westlund](https://erik-westlund.academic.page).
+
 ## Packages
 
 <x-package-table />

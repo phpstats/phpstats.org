@@ -4,6 +4,7 @@
         <div class="sm:col-span-2 md:col-span-1">
             <a href="{{ route('home') }}" class="flex items-center gap-2 font-semibold"><x-logo :size="24" /> PHPstats</a>
             <p class="mt-3 max-w-sm text-sm leading-6 text-zinc-600 dark:text-zinc-400">Modern statistical computing for PHP. Open source under the phpstats organization on GitHub.</p>
+            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Created by <a href="https://erik-westlund.academic.page" class="font-medium underline decoration-zinc-300 underline-offset-2 hover:text-zinc-900 dark:decoration-zinc-600 dark:hover:text-white">Erik Westlund</a>.</p>
         </div>
         @foreach (config('phpstats.layers') as $layer)
             <div class="layer-{{ $layer['color'] }}">
