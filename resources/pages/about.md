@@ -28,7 +28,7 @@ and [Jupyter](https://jupyter.org/), as well as from the
 - <x-package-link package="juphyter" class="font-semibold" />: a PHP kernel for <a href="https://jupyter.org">Jupyter</a>, modeled on <a href="https://github.com/IRkernel/IRkernel" class="font-mono">IRkernel</a>, that also runs PHP in <a href="https://quarto.org">Quarto</a> documents.
 - <x-package-link package="phit" class="font-semibold" />: its own Rust implementation of regression, mixed models, and distributions, drawing on R's <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/00Index.html" class="font-mono">stats</a>, <a href="https://github.com/lme4/lme4" class="font-mono">lme4</a>, and <a href="https://www.statsmodels.org" class="font-mono">statsmodels</a>. Models are written in R's formula syntax.
 - <x-package-link package="phiz" class="font-semibold" />: the grammar of graphics of <a href="https://ggplot2.tidyverse.org" class="font-mono">ggplot2</a>.
-- <x-package-link package="cmdstanphp" class="font-semibold" />: a port of <a href="https://mc-stan.org/cmdstanr/" class="font-mono">CmdStanR</a>.
+- <x-package-link package="cmdstanphp" class="font-semibold" />: a PHP interface to <a href="https://mc-stan.org/users/interfaces/cmdstan">CmdStan</a>, with an API modeled on <a href="https://mc-stan.org/cmdstanr/" class="font-mono">CmdStanR</a>.
 
 ## Validation
 
@@ -41,5 +41,4 @@ Each package documents its checks:
 
 The source of every package and of this site is in the
 [PHPstats organization on GitHub](https://github.com/phpstats). All of it is
-released under the MIT license. Each repository's LICENSE file names its
-copyright holder.
+released under the MIT license.

@@ -65,7 +65,7 @@ return [
             ['path' => 'laravel', 'title' => 'Analyze Eloquent models', 'description' => 'Turn Eloquent queries and collections into data frames, then summarize and chart them.'],
         ],
         'phplyr' => [
-            ['path' => 'port-r-script', 'title' => 'Port an R script', 'description' => 'Translate an R analysis that cleans, reshapes, and models data.'],
+            ['path' => 'port-r-script', 'title' => 'Translate an R script', 'description' => 'Translate an R analysis that cleans, reshapes, and models data.'],
             ['path' => 'gallery', 'title' => 'Analysis gallery', 'description' => 'Short analyses that combine data pipelines with model fits.'],
         ],
         'phit' => [
@@ -162,7 +162,7 @@ return [
             'link' => 'examples/linear-model',
         ],
         'cmdstanphp' => [
-            'tasks' => 'Fit Bayesian models written in Stan and summarize their posterior draws. A port of R\'s CmdStanR.',
+            'tasks' => 'Fit Bayesian models written in Stan and summarize their posterior draws. Its API is modeled on R\'s CmdStanR.',
             'example' => 'Example: Sample a hierarchical model and summarize it',
             'output' => 'Posterior summary',
             'link' => 'examples/sample',

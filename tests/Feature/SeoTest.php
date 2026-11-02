@@ -144,7 +144,7 @@ class SeoTest extends TestCase
             'http://phit.phpstats.test/verification' => 'Verification in phit. Statistical models, probability distributions, and descriptive statistics.',
             'http://phpolars.phpstats.test/benchmarks' => 'Benchmarks in phpolars. Polars data frames for PHP through a native extension.',
             // A Livewire page renders its own view through the same layout.
-            'http://cmdstanphp.phpstats.test/vignettes/bayesian-schools' => 'Bayesian school effects in CmdStanPHP. A PHP port of CmdStanR for Bayesian modeling with Stan.',
+            'http://cmdstanphp.phpstats.test/vignettes/bayesian-schools' => 'Bayesian school effects in CmdStanPHP. Bayesian modeling with Stan from PHP, through CmdStan.',
         ];
 
         foreach ($pages as $url => $description) {

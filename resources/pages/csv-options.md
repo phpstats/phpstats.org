@@ -4,13 +4,13 @@ lead: The same reader options carry readr's names in phibble and phit, and Polar
 description: A table mapping the readr-named CSV options of phibble and phit to the Polars-named options of phpolars, including the options that exist on only one side.
 ---
 
-phibble, phit, and phpolars each read a CSV file, and the three name the reader's options three ways. phibble's `DataFrame::fromCsv()` is a port of readr's `read_delim()` and takes readr's option names. `Phit\read_csv()` is the native reader that phibble calls when the extension is loaded, and it takes the same names in readr's own spelling. `Phpolars\read_csv()` wraps Polars' reader and takes py-polars' names.
+phibble, phit, and phpolars each read a CSV file, and the three name the reader's options three ways. phibble's `DataFrame::fromCsv()` follows readr's `read_delim()` and takes readr's option names. `Phit\read_csv()` is the native reader that phibble calls when the extension is loaded, and it takes the same names in readr's own spelling. `Phpolars\read_csv()` wraps Polars' reader and takes py-polars' names.
 
 A reader who learns `fromCsv(nMax: 5)` in phibble needs `read_csv(nRows: 5)` in phpolars. The table below covers every option of both readers.
 
 ## Why the names differ
 
-Convention 3 of the family's API conventions keeps free functions snake_case and members camelCase. It then exempts a package that ports a library faithfully, so that package keeps its source's names. phpolars holds one of those exemptions because it ports Polars. Renaming its options toward readr would put a Polars port's parameter names at odds with Polars' own documentation, which is what the exemption prevents. The conventions are in the family repository, at `docs/api-conventions.md`.
+Convention 3 of the family's API conventions keeps free functions snake_case and members camelCase. It then exempts a package that follows another library's API closely, so that package keeps that library's names. phpolars holds one of those exemptions because it wraps Polars. Renaming its options toward readr would put phpolars' parameter names at odds with Polars' own documentation, which is what the exemption prevents. The conventions are in the family repository, at `docs/api-conventions.md`.
 
 ## phibble and phit spell the readr options differently
 

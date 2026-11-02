@@ -170,7 +170,7 @@ return [
         // CmdStanPHP's build tools compile Stan models, not the package.
         'build_label' => 'To compile models',
         'from_r' => 'cmdstanr',
-        'summary' => 'A PHP port of CmdStanR for Bayesian modeling with Stan.',
+        'summary' => 'Bayesian modeling with Stan from PHP, through CmdStan.',
         'status' => 'working',
         'status_label' => 'Working',
         'repo' => 'https://github.com/phpstats/cmdstanphp',
