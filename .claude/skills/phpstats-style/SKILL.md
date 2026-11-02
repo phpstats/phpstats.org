@@ -10,6 +10,11 @@ that packages sync into it.
 
 ## Package names
 
+- The project is "PHPstats" in all prose, headings, and labels. Lowercase
+  `phpstats` appears only in identifiers: hostnames and URLs, the GitHub
+  organization and repository paths, Composer vendor names, and kernel or
+  config ids. Write "the PHPstats organization on GitHub" and "the PHPstats
+  datasets repository".
 - Write each name exactly: phibble, phpolars, phplyr, juphyter, phiz, phit,
   and CmdStanPHP. Every name is lowercase except CmdStanPHP, which follows
   CmdStanR and CmdStanPy. Keys, URLs, and Composer names stay lowercase.

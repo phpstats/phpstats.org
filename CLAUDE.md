@@ -1,4 +1,4 @@
-# phpstats site
+# PHPstats site
 
 The website for the PHPstats family: a Laravel 13 + Livewire 4 app.
 

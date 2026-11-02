@@ -40,6 +40,6 @@ Each package documents its checks:
 ## Source and license
 
 The source of every package and of this site is in the
-[phpstats organization on GitHub](https://github.com/phpstats). All of it is
+[PHPstats organization on GitHub](https://github.com/phpstats). All of it is
 released under the MIT license. Each repository's LICENSE file names its
 copyright holder.
