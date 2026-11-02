@@ -378,11 +378,15 @@ pre,
     clip: rect(0 0 0 0);
 }
 
-/* The landing page never scrolls sideways: code and printed output wrap at
-   the width they have, and table cells may wrap too. */
+/* Source code wraps within the landing page's panels. Printed output keeps
+   its columns and scrolls within its own panel. */
 .landing pre {
     white-space: pre-wrap;
     overflow-wrap: anywhere;
+}
+.landing pre:not(:has(code)) {
+    white-space: pre;
+    overflow-wrap: normal;
 }
 /* Code split by App\Content\Code::hanging(): one block per line, so a wrapped
    line continues under its own indentation instead of at the left edge.
@@ -401,11 +405,17 @@ pre.code-wrap {
     .landing pre {
         font-size: 0.75rem;
     }
+    /* Hidden slides keep their width for chart sizing without adding height. */
+    [data-hero-slide][data-active="false"],
+    [data-hero-panel][data-active="false"] {
+        position: absolute;
+        top: 0;
+        inset-inline: 0;
+    }
 }
 .landing .juphyter-table th,
 .landing .juphyter-table td {
-    white-space: normal;
-    overflow-wrap: anywhere;
+    white-space: nowrap;
 }
 
 /* phiz wraps each chart in a figure; a wide one scrolls rather than overflowing. */

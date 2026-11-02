@@ -260,7 +260,7 @@
                     'value' => $value,
                     'diff' => $diff,
                 ])->render(),
-                files: [\App\Data\VerificationReferences::path()],
+                files: [\App\Data\VerificationReferences::path(), resource_path('views/components/landing/verified-table.blade.php')],
             );
         } catch (\Throwable $e) {
             report($e);

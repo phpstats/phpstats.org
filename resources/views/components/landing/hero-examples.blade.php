@@ -5,7 +5,7 @@
     it printed; one that echoes several returns them, keyed as in $examples. A
     slide shows the code and, under tabs a visitor opens, those results. The
     panel is as tall as the introduction beside it on wide screens. The carousel moves to the next example every five seconds
-    until a visitor uses it. An example this server can't run is left out.
+    until a visitor uses it. Mobile navigation is manual. An example this server can't run is left out.
 --}}
 @php
     $examples = [
@@ -35,13 +35,14 @@
     $syntaxes = ['pipe' => 'PHP 8.5+', 'chain' => 'PHP 8.3–8.4'];
 @endphp
 @if ($slides !== [])
-<div x-data="heroCarousel({{ count($slides) }})" x-on:mouseenter="paused = true" x-on:mouseleave="paused = false" x-on:focusin="paused = true" x-on:focusout="paused = false"
+<div x-data="heroCarousel({{ count($slides) }})" x-on:mouseenter="paused = true" x-on:mouseleave="paused = false" x-on:focusin="paused = true" x-on:focusout="paused = false" x-on:touchstart.passive="stop()"
      role="region" aria-roledescription="carousel" aria-label="Examples" class="code-ink flex h-full flex-col overflow-hidden rounded-xl shadow-2xl shadow-black/40 ring-1 ring-white/10">
-    {{-- The slides share one grid cell, so the panel keeps the height of the tallest. --}}
-    <div class="grid flex-1">
+    {{-- On wide screens, shared grid cells keep the height of the tallest slide. --}}
+    <div class="relative grid flex-1">
         @foreach ($slides as $name => $slide)
             @php $index = $loop->index; @endphp
             <div role="group" aria-roledescription="slide" aria-label="{{ $slide['title'] }}"
+                 data-hero-slide data-active="{{ $loop->first ? 'true' : 'false' }}" x-bind:data-active="(current === {{ $index }}).toString()"
                  x-bind:inert="current !== {{ $index }}" @unless ($loop->first) inert @endunless
                  x-bind:class="{ 'opacity-0 invisible': current !== {{ $index }} }"
                  @class(['flex min-w-0 flex-col transition-[opacity,visibility] duration-500 [grid-area:1/1]', 'opacity-0 invisible' => ! $loop->first])
@@ -69,9 +70,10 @@
                             </div>
                         @endif
                     </div>
-                    {{-- The code and each result share a cell too, so changing tabs never changes the height. --}}
-                    <div class="grid flex-1">
+                    {{-- Outputs also share a cell; mobile height follows the selected tab. --}}
+                    <div class="relative grid flex-1">
                         <div role="tabpanel" id="hero-{{ $name }}-code" aria-labelledby="hero-{{ $name }}-tab-code"
+                             data-hero-panel data-active="true" x-bind:data-active="(tab === 'code').toString()"
                              x-bind:class="{ invisible: tab !== 'code' }" class="min-w-0 [grid-area:1/1]">
                             @if ($slide['code']['chain'] === null)
                                 <pre class="px-4 py-3 font-mono text-[0.8125rem] leading-[1.6]"><code>{!! $render($slide['code']['pipe']) !!}</code></pre>
@@ -83,6 +85,7 @@
                         </div>
                         @foreach ($slide['rendered'] as $key => $html)
                             <div role="tabpanel" id="hero-{{ $name }}-{{ $key }}" aria-labelledby="hero-{{ $name }}-tab-{{ $key }}"
+                                 data-hero-panel data-active="false" x-bind:data-active="(tab === '{{ $key }}').toString()"
                                  x-bind:class="{ invisible: tab !== '{{ $key }}' }" class="invisible flex min-w-0 flex-col justify-center bg-white text-zinc-900 [grid-area:1/1] dark:bg-zinc-900 dark:text-zinc-100">
                                 {!! $html !!}
                             </div>
@@ -100,16 +103,16 @@
         </div>
         @if (count($slides) > 1)
             <div class="flex items-center gap-3">
-                <button type="button" x-on:click="show(current - 1)" aria-label="Previous example" class="rounded-md p-1 text-zinc-400 transition hover:bg-white/10 hover:text-white">
+                <button type="button" x-on:click="show(current - 1)" aria-label="Previous example" class="flex size-11 items-center justify-center rounded-md text-zinc-400 transition hover:bg-white/10 hover:text-white sm:size-6">
                     <x-heroicon-m-chevron-left class="size-4" />
                 </button>
                 @foreach ($slides as $slide)
                     <button type="button" x-on:click="show({{ $loop->index }})" aria-label="{{ $slide['title'] }}"
                             x-bind:aria-current="current === {{ $loop->index }} ? 'true' : null"
                             x-bind:class="{ 'bg-white': current === {{ $loop->index }}, 'bg-white/30 hover:bg-white/50': current !== {{ $loop->index }} }"
-                            @class(['size-2 rounded-full transition', 'bg-white' => $loop->first, 'bg-white/30 hover:bg-white/50' => ! $loop->first])></button>
+                            @class(['size-2 rounded-full transition before:block before:size-6 before:-translate-x-2 before:-translate-y-2', 'bg-white' => $loop->first, 'bg-white/30 hover:bg-white/50' => ! $loop->first])></button>
                 @endforeach
-                <button type="button" x-on:click="show(current + 1)" aria-label="Next example" class="rounded-md p-1 text-zinc-400 transition hover:bg-white/10 hover:text-white">
+                <button type="button" x-on:click="show(current + 1)" aria-label="Next example" class="flex size-11 items-center justify-center rounded-md text-zinc-400 transition hover:bg-white/10 hover:text-white sm:size-6">
                     <x-heroicon-m-chevron-right class="size-4" />
                 </button>
             </div>

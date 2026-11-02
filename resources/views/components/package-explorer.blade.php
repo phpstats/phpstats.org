@@ -20,7 +20,22 @@
 @endphp
 <div x-data="{ open: 'phibble', keys: @js($keys), move(step) { const i = (this.keys.indexOf(this.open) + step + this.keys.length) % this.keys.length; this.open = this.keys[i]; this.$nextTick(() => document.getElementById('package-tab-' + this.open).focus()); } }"
      class="overflow-hidden rounded-2xl ring-1 ring-zinc-200 lg:grid lg:grid-cols-[2fr_3fr] dark:ring-white/10">
-    <div class="divide-y divide-zinc-200 border-b border-zinc-200 lg:border-b-0 lg:border-r dark:divide-white/10 dark:border-white/10" x-on:keydown.down.prevent="move(1)" x-on:keydown.up.prevent="move(-1)">
+    <div class="border-b border-zinc-200 p-4 lg:hidden dark:border-white/10">
+        <label for="package-picker" class="mb-2 block text-sm font-medium text-zinc-600 dark:text-zinc-400">Choose a package</label>
+        <select id="package-picker" x-model="open" class="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2.5 font-mono text-base text-zinc-950 focus:outline-2 focus:outline-php-500 dark:border-white/20 dark:bg-zinc-900 dark:text-white">
+            @foreach (config('phpstats.layers') as $layer)
+                <optgroup label="{{ $layer['title'] }}">
+                    @foreach (array_intersect($layer['packages'], $keys) as $key)
+                        <option value="{{ $key }}" @selected($key === 'phibble')>{{ $packages[$key]->name() }}</option>
+                    @endforeach
+                </optgroup>
+            @endforeach
+        </select>
+        @foreach ($keys as $key)
+            <p x-show="open === '{{ $key }}'" @unless ($key === 'phibble') x-cloak @endunless class="mt-3 text-sm leading-normal text-zinc-600 dark:text-zinc-400">{{ $explorer[$key]['tasks'] ?? $packages[$key]->tagline() }}</p>
+        @endforeach
+    </div>
+    <div class="hidden divide-y divide-zinc-200 border-r border-zinc-200 lg:block dark:divide-white/10 dark:border-white/10" x-on:keydown.down.prevent="move(1)" x-on:keydown.up.prevent="move(-1)">
         @foreach (config('phpstats.layers') as $layer)
             @php $tabs = array_values(array_intersect($layer['packages'], $keys)); @endphp
             @continue ($tabs === [])

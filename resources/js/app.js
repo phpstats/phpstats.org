@@ -91,18 +91,19 @@ Alpine.data('syntaxTabs', () => ({
 
 // The landing hero's examples, shown one at a time. The carousel moves to the
 // next every five seconds until a visitor uses it, and not at all for visitors
-// who ask for reduced motion.
+// who ask for reduced motion. Phones use manual navigation so content stays
+// still while the visitor scrolls through the page.
 Alpine.data('heroCarousel', (count) => ({
     count,
     current: 0,
     timer: null,
     paused: false,
     init() {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        if (window.matchMedia('(prefers-reduced-motion: reduce), (max-width: 639px)').matches) {
             return;
         }
         this.timer = setInterval(() => {
-            if (!this.paused) {
+            if (!this.paused && !window.matchMedia('(max-width: 639px)').matches) {
                 this.current = (this.current + 1) % this.count;
             }
         }, 5000);
@@ -110,6 +111,9 @@ Alpine.data('heroCarousel', (count) => ({
     stop() {
         clearInterval(this.timer);
         this.timer = null;
+    },
+    destroy() {
+        this.stop();
     },
     show(index) {
         this.stop();

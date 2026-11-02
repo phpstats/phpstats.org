@@ -5,12 +5,12 @@
         @php $shown = $value($mine, $panel['relative']); @endphp
         <div class="py-2.5">
             <dt class="font-medium text-zinc-900 dark:text-zinc-100">{{ $label }}</dt>
-            <dd class="mt-1 grid grid-cols-2 gap-x-4 gap-y-0.5 text-xs">
-                <span class="flex justify-between gap-2"><span class="font-mono text-zinc-500">{{ $panel['primary'] ?? 'phit' }}</span><span class="font-mono">{!! $shown !!}</span></span>
+            <dd class="mt-2 space-y-1.5 text-xs tabular-nums">
+                <span class="flex items-baseline justify-between gap-4"><span class="font-mono text-zinc-500">{{ $panel['primary'] ?? 'phit' }}</span><span class="shrink-0 whitespace-nowrap font-mono">{!! $shown !!}</span></span>
                 @foreach ($panel['libraries'] as $library => $libraryLabel)
-                    <span class="flex justify-between gap-2">
-                        <span class="text-zinc-500">{!! \App\Content\Libraries::mono(e($libraryLabel)) !!}</span>
-                        <span class="font-mono">{!! ($theirs[$library] ?? null) === null ? '—' : $value($theirs[$library], $panel['relative']) !!}</span>
+                    <span class="flex items-baseline justify-between gap-4">
+                        <span class="min-w-0 text-zinc-500">{!! \App\Content\Libraries::mono(e($libraryLabel)) !!}</span>
+                        <span class="shrink-0 whitespace-nowrap font-mono">{!! ($theirs[$library] ?? null) === null ? '—' : $value($theirs[$library], $panel['relative']) !!}</span>
                     </span>
                 @endforeach
             </dd>
