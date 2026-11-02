@@ -53,5 +53,9 @@ package's repository in the
 ## Source and license
 
 The source of every package and of this site is in the
-[PHPstats organization on GitHub](https://github.com/phpstats). All of it is
-released under the MIT license.
+[PHPstats organization on GitHub](https://github.com/phpstats). The site and
+every package except CmdStanPHP are released under the MIT license.
+CmdStanPHP is released under the GNU General Public License, version 3 or
+later, because parts of it follow GPL-licensed R packages. Each repository's
+THIRD_PARTY_NOTICES.md lists the code that follows other projects, with their
+licenses.

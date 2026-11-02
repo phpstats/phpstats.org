@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66c84bc84a6ddeeb384b6cbce2cc7959",
+    "content-hash": "ae2cf0cfc3ee0f522422d710833f37a8",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2851,16 +2851,16 @@
         },
         {
             "name": "phpstats/cmdstanphp",
-            "version": "v0.1.2",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstats/CmdStanPHP.git",
-                "reference": "7e997095e611361667cd9ba0412ffaf9a0b9be93"
+                "reference": "177917c4a7866da9d7415e189482125bd5722462"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstats/CmdStanPHP/zipball/7e997095e611361667cd9ba0412ffaf9a0b9be93",
-                "reference": "7e997095e611361667cd9ba0412ffaf9a0b9be93",
+                "url": "https://api.github.com/repos/phpstats/CmdStanPHP/zipball/177917c4a7866da9d7415e189482125bd5722462",
+                "reference": "177917c4a7866da9d7415e189482125bd5722462",
                 "shasum": ""
             },
             "require": {
@@ -2887,14 +2887,14 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "GPL-3.0-or-later"
             ],
             "description": "A PHP interface to CmdStan inspired by CmdStanR",
             "support": {
                 "issues": "https://github.com/phpstats/CmdStanPHP/issues",
-                "source": "https://github.com/phpstats/CmdStanPHP/tree/v0.1.2"
+                "source": "https://github.com/phpstats/CmdStanPHP/tree/v0.2.0"
             },
-            "time": "2026-10-31T15:26:29+00:00"
+            "time": "2026-11-02T12:16:07+00:00"
         },
         {
             "name": "phpstats/phibble",
