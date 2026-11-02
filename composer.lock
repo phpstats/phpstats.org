@@ -3030,16 +3030,16 @@
         },
         {
             "name": "phpstats/phplyr",
-            "version": "v0.4.8",
+            "version": "v0.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstats/phplyr.git",
-                "reference": "65e6a462be620a018290b38c96148327c62aaf23"
+                "reference": "c597df9726a5607c72c58524b1f0ba7c11c7aacb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstats/phplyr/zipball/65e6a462be620a018290b38c96148327c62aaf23",
-                "reference": "65e6a462be620a018290b38c96148327c62aaf23",
+                "url": "https://api.github.com/repos/phpstats/phplyr/zipball/c597df9726a5607c72c58524b1f0ba7c11c7aacb",
+                "reference": "c597df9726a5607c72c58524b1f0ba7c11c7aacb",
                 "shasum": ""
             },
             "require": {
@@ -3084,9 +3084,9 @@
             "description": "A dplyr-style grammar of data manipulation for PHP 8.3+, with method chains or PHP 8.5 pipes",
             "support": {
                 "issues": "https://github.com/phpstats/phplyr/issues",
-                "source": "https://github.com/phpstats/phplyr/tree/v0.4.8"
+                "source": "https://github.com/phpstats/phplyr/tree/v0.4.9"
             },
-            "time": "2026-11-02T12:11:45+00:00"
+            "time": "2026-11-02T12:19:55+00:00"
         },
         {
             "name": "psr/clock",
