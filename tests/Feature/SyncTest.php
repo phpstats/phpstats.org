@@ -622,11 +622,9 @@ class SyncTest extends TestCase
         $package = Package::find('phibble');
         $this->assertTrue($package->sync()['local']);
 
-        // Both pages print where the content came from, and neither reads a
-        // commit that a local sync does not have.
+        // The overview renders, and neither page reads a commit that a local
+        // sync does not have.
         $this->get($package->url())->assertOk()
-            ->assertSee('Content from a local checkout of')
-            ->assertSee('phpstats/phibble')
             ->assertDontSee('/tree/', false);
 
         $this->get($package->url('vignette', ['slug' => 'demo']))->assertOk()
@@ -635,17 +633,16 @@ class SyncTest extends TestCase
             ->assertDontSee('/blob/', false);
     }
 
-    /** A pinned sync still links the commit on both pages. */
-    public function test_a_pinned_package_still_links_its_commit(): void
+    /** Overview and docs pages don't print the pinned commit. */
+    public function test_pages_do_not_print_the_pinned_commit(): void
     {
         config(['phpstats.content_path' => $this->realContent]);
         Package::flush();
         $package = Package::find('phplyr');
-        $commit = $package->sync()['commit'];
+        $commit = substr($package->sync()['commit'], 0, 7);
 
-        $this->get($package->url())->assertOk()
-            ->assertSee("/tree/{$commit}", false)
-            ->assertDontSee('local checkout');
+        $this->get($package->url())->assertOk()->assertDontSee("@{$commit}");
+        $this->get($package->url('docs'))->assertOk()->assertDontSee("@{$commit}");
     }
 
     /** The pinned path still clones, sparse-checks out, and reads the commit. */

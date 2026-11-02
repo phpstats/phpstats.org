@@ -125,16 +125,6 @@
                 </nav>
             @endif
 
-            @if ($sync = $package->sync())
-                <p class="mt-8 text-xs text-zinc-500">
-                    @if ($sync['local'] ?? false)
-                        {{-- `site:sync --from` reads a working tree, which has no commit to link. --}}
-                        From a local checkout of <span class="font-mono">{{ $sync['repo'] }}</span>, not a pinned commit.
-                    @else
-                        From <a href="https://github.com/{{ $sync['repo'] }}/tree/{{ $sync['commit'] }}" class="font-mono underline decoration-zinc-300 underline-offset-2">{{ $sync['repo'].'@'.substr($sync['commit'], 0, 7) }}</a>.
-                    @endif
-                </p>
-            @endif
         </article>
 
         @if ($moved = $package->movedFragments($path))

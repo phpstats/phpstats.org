@@ -97,9 +97,9 @@
         </div>
     </section>
 
-    {{-- A package with no sections, relations, or synced content has an empty
+    {{-- A package with no sections or relations has an empty
          aside, so the second column is left out rather than shown blank. --}}
-    @php $hasAside = $sections !== [] || $relations->isNotEmpty() || $package->sync() !== null; @endphp
+    @php $hasAside = $sections !== [] || $relations->isNotEmpty(); @endphp
     <div @class([
         'layer-'.$layer['color'],
         'mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 lg:px-8',
@@ -222,16 +222,6 @@
                 </div>
             @endif
 
-            @if ($sync = $package->sync())
-                <p class="text-xs text-zinc-500">
-                    @if ($sync['local'] ?? false)
-                        {{-- `site:sync --from` reads a working tree, which has no commit to link. --}}
-                        Content from a local checkout of <span class="font-mono">{{ $sync['repo'] }}</span>, not a pinned commit.
-                    @else
-                        Content from <a href="https://github.com/{{ $sync['repo'] }}/tree/{{ $sync['commit'] }}" class="font-mono underline decoration-zinc-300 underline-offset-2 hover:text-zinc-800 dark:hover:text-zinc-200">{{ $sync['repo'].'@'.substr($sync['commit'], 0, 7) }}</a>.
-                    @endif
-                </p>
-            @endif
         </aside>
         @endif
     </div>
