@@ -229,28 +229,28 @@
             "title": "Gallery",
             "headings": [
                 {
-                    "id": "school-residuals",
-                    "text": "School residuals",
+                    "id": "subject-residuals",
+                    "text": "Subject residuals",
                     "level": 2
                 },
                 {
-                    "id": "schools-as-random-intercepts",
-                    "text": "Schools as random intercepts",
+                    "id": "subjects-as-random-intercepts",
+                    "text": "Subjects as random intercepts",
                     "level": 2
                 },
                 {
-                    "id": "rent-per-square-meter",
-                    "text": "Rent per square meter",
+                    "id": "fuel-economy-by-cylinders",
+                    "text": "Fuel economy by cylinders",
                     "level": 2
                 },
                 {
-                    "id": "pass-rates-by-study-time",
-                    "text": "Pass rates by study time",
+                    "id": "labor-force-participation-by-age",
+                    "text": "Labor-force participation by age",
                     "level": 2
                 },
                 {
-                    "id": "clinic-calls-by-staffing",
-                    "text": "Clinic calls by staffing",
+                    "id": "warp-breaks-by-wool-and-tension",
+                    "text": "Warp breaks by wool and tension",
                     "level": 2
                 }
             ],
