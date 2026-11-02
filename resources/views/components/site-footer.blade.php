@@ -5,6 +5,7 @@
             <a href="{{ route('home') }}" class="flex items-center gap-2 font-semibold"><x-logo :size="24" /> PHPstats</a>
             <p class="mt-3 max-w-sm text-sm leading-5 text-zinc-600 dark:text-zinc-400">Modern statistical computing for PHP. Open source under the PHPstats organization on GitHub.</p>
             <p class="mt-4 text-sm text-zinc-600 dark:text-zinc-400">Created by <a href="https://erik-westlund.academic.page" class="font-medium underline decoration-zinc-300 underline-offset-2 hover:text-zinc-900 dark:decoration-zinc-600 dark:hover:text-white">Erik Westlund</a>.</p>
+            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Developed with AI assistance. <a href="{{ route('page', 'about') }}#ai-statement" class="font-medium underline decoration-zinc-300 underline-offset-2 hover:text-zinc-900 dark:decoration-zinc-600 dark:hover:text-white">AI statement</a>.</p>
         </div>
         @foreach (config('phpstats.layers') as $layer)
             <div class="layer-{{ $layer['color'] }}">

@@ -37,6 +37,20 @@ Each package documents its checks:
 
 <x-verification-links />
 
+<h2 id="ai-statement">AI statement</h2>
+
+PHPstats was developed with AI assistance. Large language models wrote and
+revised much of the code and documentation, directed and reviewed by Erik
+Westlund. Rebuilding the methods of established R, Python, and Stan packages
+in PHP by hand would not be practical for one person.
+
+Credit for those methods belongs to the authors of the original packages,
+which each package's documentation names and links. Each package's results are
+compared against those packages, and the Verification section of each package
+publishes the comparisons. If you find an error, please open an issue in the
+package's repository in the
+[PHPstats organization on GitHub](https://github.com/phpstats).
+
 ## Source and license
 
 The source of every package and of this site is in the
