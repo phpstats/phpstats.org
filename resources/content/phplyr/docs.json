@@ -266,7 +266,7 @@
                 },
                 {
                     "id": "a-first-script",
-                    "text": "A first script",
+                    "text": "Example data",
                     "level": 2
                 },
                 {
@@ -307,17 +307,17 @@
             "headings": [
                 {
                     "id": "a-first-pipeline",
-                    "text": "A first pipeline",
+                    "text": "Example",
                     "level": 2
                 },
                 {
                     "id": "phplyr-and-phibble",
-                    "text": "phplyr and phibble",
+                    "text": "Features",
                     "level": 2
                 },
                 {
                     "id": "install",
-                    "text": "Install",
+                    "text": "Installation",
                     "level": 2
                 }
             ],
@@ -349,7 +349,7 @@
                 },
                 {
                     "id": "what-changed-in-translation",
-                    "text": "What changed in translation",
+                    "text": "Translation notes",
                     "level": 2
                 }
             ],

@@ -122,7 +122,7 @@
             "headings": [
                 {
                     "id": "choosing-and-switching",
-                    "text": "Choosing and switching",
+                    "text": "Switching backends",
                     "level": 2
                 },
                 {
@@ -199,7 +199,7 @@
                 },
                 {
                     "id": "testing-a-backend",
-                    "text": "Testing a backend",
+                    "text": "Backend tests",
                     "level": 2
                 }
             ],
@@ -215,7 +215,7 @@
                 },
                 {
                     "id": "comparing-with-r",
-                    "text": "Comparing with R",
+                    "text": "R comparisons",
                     "level": 2
                 },
                 {
@@ -256,12 +256,12 @@
             "headings": [
                 {
                     "id": "building-expressions",
-                    "text": "Building expressions",
+                    "text": "Construction",
                     "level": 2
                 },
                 {
                     "id": "using-expressions-with-verbs",
-                    "text": "Using expressions with table methods",
+                    "text": "Expressions in table methods",
                     "level": 2
                 },
                 {
@@ -475,22 +475,22 @@
             "headings": [
                 {
                     "id": "the-example-data",
-                    "text": "The example data",
+                    "text": "Example data",
                     "level": 2
                 },
                 {
                     "id": "from-a-collection-or-query-to-a-dataframe",
-                    "text": "From a collection or query to a DataFrame",
+                    "text": "DataFrames from collections and queries",
                     "level": 2
                 },
                 {
                     "id": "queries-that-stay-in-the-database",
-                    "text": "Queries that stay in the database",
+                    "text": "Lazy queries",
                     "level": 2
                 },
                 {
                     "id": "with-phplyr",
-                    "text": "With phplyr",
+                    "text": "phplyr",
                     "level": 2
                 },
                 {
@@ -500,12 +500,12 @@
                 },
                 {
                     "id": "using-the-result",
-                    "text": "Using the result",
+                    "text": "Results",
                     "level": 2
                 },
                 {
                     "id": "running-the-examples",
-                    "text": "Running the examples",
+                    "text": "Example setup",
                     "level": 2
                 }
             ],
@@ -2341,12 +2341,12 @@
                 },
                 {
                     "id": "what-compiles-to-sql",
-                    "text": "What compiles to SQL",
+                    "text": "SQL translation",
                     "level": 2
                 },
                 {
                     "id": "when-the-table-falls-back-to-memory",
-                    "text": "When the table falls back to memory",
+                    "text": "Fallback to memory",
                     "level": 2
                 },
                 {

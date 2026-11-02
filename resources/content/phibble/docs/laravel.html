@@ -4,12 +4,12 @@
 <li><code>-&gt;phibble()</code> on query builders, Eloquent builders, and relations returns a lazy <code>SqlTable</code> that compiles table methods to SQL.</li>
 </ul>
 <section id="the-example-data" class="level2">
-<h2 class="anchored" data-anchor-id="the-example-data">The example data</h2>
+<h2 class="anchored" data-anchor-id="the-example-data">Example data</h2>
 <p>Each example on this page queries this model, over a <code>penguins</code> table loaded from the Palmer penguins data in the <a href="https://github.com/phpstats/datasets#penguins">PHPstats datasets</a>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb1-1" class="code-line" style="--indent: 0ch"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> Illuminate\Database\Eloquent\Model<span class="ot">;</span></span><span id="cb1-2" class="code-line" style="--indent: 0ch"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-3" class="code-line" style="--indent: 0ch"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">final</span> <span class="kw">class</span> Penguin <span class="kw">extends</span> Model</span><span id="cb1-4" class="code-line" style="--indent: 0ch"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>{</span><span id="cb1-5" class="code-line" style="--indent: 4ch"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">protected</span> <span class="va">$table</span> <span class="op">=</span> <span class="st">'penguins'</span><span class="ot">;</span></span><span id="cb1-6" class="code-line" style="--indent: 0ch"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-7" class="code-line" style="--indent: 4ch"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="va">$timestamps</span> <span class="op">=</span> <span class="kw">false</span><span class="ot">;</span></span><span id="cb1-8" class="code-line" style="--indent: 0ch"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span><span id="cb1-9" class="code-line" style="--indent: 4ch"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">function</span> scopeMeasured(<span class="va">$query</span>)</span><span id="cb1-10" class="code-line" style="--indent: 4ch"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    {</span><span id="cb1-11" class="code-line" style="--indent: 8ch"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">$query</span>-&gt;whereNotNull(<span class="st">'body_mass_g'</span>)<span class="ot">;</span></span><span id="cb1-12" class="code-line" style="--indent: 4ch"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    }</span><span id="cb1-13" class="code-line" style="--indent: 0ch"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div></div>
 </section>
 <section id="from-a-collection-or-query-to-a-dataframe" class="level2">
-<h2 class="anchored" data-anchor-id="from-a-collection-or-query-to-a-dataframe">From a collection or query to a DataFrame</h2>
+<h2 class="anchored" data-anchor-id="from-a-collection-or-query-to-a-dataframe">DataFrames from collections and queries</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb2-1" class="code-line" style="--indent: 0ch"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">$df</span> <span class="op">=</span> Penguin::query()</span><span id="cb2-2" class="code-line" style="--indent: 4ch"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    -&gt;where(<span class="st">'year'</span><span class="ot">,</span> <span class="dv">2009</span>)</span><span id="cb2-3" class="code-line" style="--indent: 4ch"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    -&gt;get()</span><span id="cb2-4" class="code-line" style="--indent: 4ch"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    -&gt;toDataFrame()<span class="ot">;</span></span><span id="cb2-5" class="code-line" style="--indent: 0ch"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span><span id="cb2-6" class="code-line" style="--indent: 0ch"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">echo</span> <span class="va">$df</span>-&gt;select([<span class="st">'species'</span><span class="ot">,</span> <span class="st">'island'</span><span class="ot">,</span> <span class="st">'body_mass_g'</span>])-&gt;head(<span class="dv">3</span>)<span class="ot">;</span></span></code></pre></div></div>
 <pre class="text output"><code># A tibble: 3 × 3
   species island body_mass_g
@@ -23,7 +23,7 @@
 </ul>
 </section>
 <section id="queries-that-stay-in-the-database" class="level2">
-<h2 class="anchored" data-anchor-id="queries-that-stay-in-the-database">Queries that stay in the database</h2>
+<h2 class="anchored" data-anchor-id="queries-that-stay-in-the-database">Lazy queries</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb4-1" class="code-line" style="--indent: 0ch"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> <span class="kw">function</span> Phibble\Expr\{col<span class="ot">,</span> mean<span class="ot">,</span> n}<span class="ot">;</span></span><span id="cb4-2" class="code-line" style="--indent: 0ch"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span><span id="cb4-3" class="code-line" style="--indent: 0ch"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="va">$summary</span> <span class="op">=</span> Penguin::query()</span><span id="cb4-4" class="code-line" style="--indent: 4ch"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    -&gt;measured()</span><span id="cb4-5" class="code-line" style="--indent: 4ch"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    -&gt;where(<span class="st">'year'</span><span class="ot">,</span> <span class="st">'&gt;='</span><span class="ot">,</span> <span class="dv">2008</span>)</span><span id="cb4-6" class="code-line" style="--indent: 4ch"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    -&gt;phibble()</span><span id="cb4-7" class="code-line" style="--indent: 4ch"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    -&gt;groupBy([<span class="st">'species'</span><span class="ot">,</span> <span class="st">'sex'</span>])</span><span id="cb4-8" class="code-line" style="--indent: 4ch"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    -&gt;summarize([</span><span id="cb4-9" class="code-line" style="--indent: 8ch"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'n'</span> =&gt; n()<span class="ot">,</span></span><span id="cb4-10" class="code-line" style="--indent: 8ch"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'mass'</span> =&gt; mean(col(<span class="st">'body_mass_g'</span>))<span class="ot">,</span></span><span id="cb4-11" class="code-line" style="--indent: 4ch"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    ])<span class="ot">;</span></span><span id="cb4-12" class="code-line" style="--indent: 0ch"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span><span id="cb4-13" class="code-line" style="--indent: 0ch"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="kw">echo</span> <span class="va">$summary</span>-&gt;collect()<span class="ot">;</span></span></code></pre></div></div>
 <pre class="text output"><code># A tibble: 7 × 4
 # Groups:   species [3]
@@ -63,7 +63,7 @@ The SQL from <code>showQuery()</code>
 <p>Reference: <a href="phpstats://phibble/docs/sql">SQL tables</a>.</p>
 </section>
 <section id="with-phplyr" class="level2">
-<h2 class="anchored" data-anchor-id="with-phplyr">With phplyr</h2>
+<h2 class="anchored" data-anchor-id="with-phplyr">phplyr</h2>
 <p><a href="https://github.com/phpstats/phplyr">phplyr</a> runs dplyr’s functions on the same lazy table, so this pipeline also runs in the database.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="syntax">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">PHP 8.5+</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">PHP 8.3–8.4</a></li></ul>
@@ -109,7 +109,7 @@ The SQL from <code>showQuery()</code>
 @phizScripts</code></pre>
 </section>
 <section id="using-the-result" class="level2">
-<h2 class="anchored" data-anchor-id="using-the-result">Using the result</h2>
+<h2 class="anchored" data-anchor-id="using-the-result">Results</h2>
 <ul>
 <li><code>$df-&gt;toRows()</code> gives a list of associative arrays, for JSON responses and Blade loops.</li>
 <li><code>$df-&gt;toJson()</code> gives the rows as a JSON string, and <code>toJson('columns')</code> gives the columns.</li>
@@ -118,7 +118,7 @@ The SQL from <code>showQuery()</code>
 </ul>
 </section>
 <section id="running-the-examples" class="level2">
-<h2 class="anchored" data-anchor-id="running-the-examples">Running the examples</h2>
+<h2 class="anchored" data-anchor-id="running-the-examples">Example setup</h2>
 <p>The example scripts run outside a Laravel application. <a href="https://github.com/phpstats/phibble/blob/main/docs/examples/support/laravel.php"><code>support/laravel.php</code></a> creates an in-memory SQLite connection, loads the CSV, registers the macros, and defines <code>Penguin</code>.</p>
 
 

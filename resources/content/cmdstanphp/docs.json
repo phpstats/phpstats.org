@@ -1181,7 +1181,7 @@
                 },
                 {
                     "id": "when-a-model-is-rebuilt",
-                    "text": "When a model is rebuilt",
+                    "text": "Rebuilds",
                     "level": 2
                 },
                 {
@@ -1222,7 +1222,7 @@
                 },
                 {
                     "id": "what-the-suites-cover",
-                    "text": "What the suites cover",
+                    "text": "Test coverage",
                     "level": 2
                 },
                 {
@@ -1341,7 +1341,7 @@
                 },
                 {
                     "id": "where-the-files-are",
-                    "text": "Where the files are",
+                    "text": "Files",
                     "level": 2
                 }
             ],

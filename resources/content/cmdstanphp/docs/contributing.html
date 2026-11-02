@@ -15,7 +15,7 @@
 <p>Tests that need the phit extension load it into PHP, for example <code>php -d extension=/path/to/libphit.dylib vendor/bin/phpunit</code>. The extension must be built for the same PHP version and thread-safety mode as the PHP that loads it.</p>
 </section>
 <section id="what-the-suites-cover" class="level2">
-<h2 class="anchored" data-anchor-id="what-the-suites-cover">What the suites cover</h2>
+<h2 class="anchored" data-anchor-id="what-the-suites-cover">Test coverage</h2>
 <p>The unit suite covers JSON shapes and invalid data, CSV comments, warmup, and special numbers, draw layouts, summaries, diagnostics, serialization, option validation, process argument isolation, pipe draining, timeouts, cancellation, and bounded execution. Process behavior is tested with real PHP subprocesses. Data frames are tested with stand-in tables and a stand-in <code>Phibble\DataFrame</code>. Without phit, <code>StanData::fromFormula()</code> is tested with a stand-in <code>Phit\model_matrix()</code>, and with phit, against the real function. The moment-matching tests need phit and skip without it.</p>
 <p>The integration suite compiles the bundled models and runs real CmdStan methods:</p>
 <ul>
@@ -40,7 +40,7 @@
 <thead>
 <tr class="header">
 <th>Job</th>
-<th>What it does</th>
+<th>Steps</th>
 </tr>
 </thead>
 <tbody>
