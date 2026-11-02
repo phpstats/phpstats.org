@@ -54,10 +54,6 @@
 <p>Import the functions you use:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb1-1" class="code-line" style="--indent: 0ch"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> <span class="kw">function</span> Phit\{fit_ols<span class="ot">,</span> predict<span class="ot">,</span> dist_normal_quantile}<span class="ot">;</span></span></code></pre></div></div>
 <p><code>stubs/phit.php</code> in the repository declares every signature with PHPDoc array shapes for IDEs and static analysis. Do not load it at runtime.</p>
-<section id="deprecated-aliases" class="level2">
-<h2 class="anchored" data-anchor-id="deprecated-aliases">Deprecated aliases</h2>
-<p><code>fit_lm</code>, <code>fit_glm</code>, <code>fit_lmer</code>, <code>fit_glmer</code>, <code>fit_logistic</code>, <code>fit_probit</code>, <code>fit_poisson</code>, <code>fit_mixed</code>, <code>fit_mixed_intercept</code>, and <code>fit_logistic_mixed</code>, and <code>fit_ols</code> called with a matrix, still exist as deprecated aliases: each call raises <code>E_USER_DEPRECATED</code> that names the current function and returns its result.</p>
-</section>
 <section id="signatures" class="level2">
 <h2 class="anchored" data-anchor-id="signatures">Signatures</h2>
 <p>The formula functions are listed in <a href="phpstats://phit/docs/formulas">Model formulas</a>. The four fixed-effect matrix functions share one signature:</p>

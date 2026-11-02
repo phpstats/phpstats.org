@@ -241,11 +241,6 @@
             "title": "API conventions",
             "headings": [
                 {
-                    "id": "deprecated-aliases",
-                    "text": "Deprecated aliases",
-                    "level": 2
-                },
-                {
                     "id": "signatures",
                     "text": "Signatures",
                     "level": 2
@@ -938,11 +933,6 @@
                     "id": "distributions",
                     "text": "Distributions",
                     "level": 2
-                },
-                {
-                    "id": "deprecated-aliases",
-                    "text": "Deprecated aliases",
-                    "level": 2
                 }
             ],
             "math": false
@@ -1039,6 +1029,21 @@
                 {
                     "id": "fit_poisson_matrix",
                     "text": "fit_poisson_matrix()",
+                    "level": 3
+                },
+                {
+                    "id": "printing-results",
+                    "text": "Printing results",
+                    "level": 2
+                },
+                {
+                    "id": "summary",
+                    "text": "summary()",
+                    "level": 3
+                },
+                {
+                    "id": "tidy",
+                    "text": "tidy()",
                     "level": 3
                 }
             ],
@@ -1415,8 +1420,8 @@
                     "level": 2
                 },
                 {
-                    "id": "a-random-intercept-model",
-                    "text": "A random-intercept model",
+                    "id": "a-random-intercept-and-slope",
+                    "text": "A random intercept and slope",
                     "level": 2
                 },
                 {
@@ -1468,6 +1473,11 @@
                 {
                     "id": "poisson-regression",
                     "text": "Poisson regression",
+                    "level": 2
+                },
+                {
+                    "id": "printing-a-fit",
+                    "text": "Printing a fit",
                     "level": 2
                 },
                 {
