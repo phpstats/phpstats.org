@@ -1,5 +1,5 @@
 <section id="vega-lite-does-the-drawing" class="level2">
-<h2 class="anchored" data-anchor-id="vega-lite-does-the-drawing">Vega-Lite does the drawing</h2>
+<h2 class="anchored" data-anchor-id="vega-lite-does-the-drawing">Rendering with Vega-Lite</h2>
 <p>phiz does not draw graphics. It translates a ggplot2-style description into a Vega-Lite specification. Vega-Lite then resolves scales, lays out facets and legends, runs transforms, handles interaction, and renders to canvas or SVG. The PHP side stays small, and plots behave the same in the browser and in static export.</p>
 <p>Statistics run as Vega-Lite transforms where Vega-Lite has them: bins, densities with the default bandwidth, aggregates, quantiles, and window functions. phiz computes a statistic in PHP when Vega-Lite has no equivalent, or when matching R needs it:</p>
 <ul>

@@ -138,7 +138,7 @@
                 },
                 {
                     "id": "not-available",
-                    "text": "Not available",
+                    "text": "Unsupported features",
                     "level": 2
                 }
             ],
@@ -251,7 +251,7 @@
             "headings": [
                 {
                     "id": "installing",
-                    "text": "Installing",
+                    "text": "Installation",
                     "level": 2
                 },
                 {
@@ -261,7 +261,7 @@
                 },
                 {
                     "id": "a-starter-script",
-                    "text": "A starter script",
+                    "text": "Starter script",
                     "level": 2
                 },
                 {
@@ -271,7 +271,7 @@
                 },
                 {
                     "id": "a-first-query",
-                    "text": "A first query",
+                    "text": "Selecting columns",
                     "level": 2
                 },
                 {
@@ -302,12 +302,12 @@
             "headings": [
                 {
                     "id": "what-it-includes",
-                    "text": "What it includes",
+                    "text": "Features",
                     "level": 2
                 },
                 {
                     "id": "the-phpolars-api-or-phibble-and-phplyr",
-                    "text": "The phpolars API or phibble and phplyr",
+                    "text": "API choice",
                     "level": 2
                 }
             ],
@@ -344,17 +344,17 @@
                 },
                 {
                     "id": "a-pipeline-on-a-polarstable",
-                    "text": "A pipeline on a PolarsTable",
+                    "text": "PolarsTable pipeline",
                     "level": 2
                 },
                 {
                     "id": "moving-data-in-and-out",
-                    "text": "Moving data in and out",
+                    "text": "Conversion",
                     "level": 2
                 },
                 {
                     "id": "what-runs-in-polars",
-                    "text": "What runs in Polars",
+                    "text": "Operations in Polars",
                     "level": 2
                 },
                 {
@@ -395,7 +395,7 @@
                 },
                 {
                     "id": "getting-values-out",
-                    "text": "Getting values out",
+                    "text": "Conversion to PHP values",
                     "level": 2
                 },
                 {

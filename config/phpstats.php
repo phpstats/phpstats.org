@@ -35,10 +35,10 @@ return [
      */
     'content' => [
         'phibble' => ['repo' => 'phpstats/phibble', 'ref' => 'd855cfb60e2a29939a7494ad00f84a8a8d3de8bc'],
-        'phpolars' => ['repo' => 'phpstats/phpolars', 'ref' => '910ad31e8d3056e555ec70934f9f3e8a1f8147ce'],
+        'phpolars' => ['repo' => 'phpstats/phpolars', 'ref' => '5a73b2b944b5c465beacef7febe06b4cdad95bf5'],
         'phplyr' => ['repo' => 'phpstats/phplyr', 'ref' => 'b484153c4ec63837c59f63ce1cf757da3bf45610'],
         'phit' => ['repo' => 'phpstats/phit', 'ref' => 'c60fb9b9238ea9b128f22b0e5ef31802336d31f5'],
-        'phiz' => ['repo' => 'phpstats/phiz', 'ref' => '1711ce6569e935b154e1e3e114e3a1d6e0ed79ec'],
+        'phiz' => ['repo' => 'phpstats/phiz', 'ref' => '7ea534d7867efa732531986f90c053f85da93af8'],
         'cmdstanphp' => ['repo' => 'phpstats/CmdStanPHP', 'ref' => '17ad5fd12418d49b6c6d69d3b5eae21429c5f582'],
         'juphyter' => ['repo' => 'phpstats/juphyter', 'ref' => 'edf6ce99e021810ba468217bcb4dcd0923158eb1'],
     ],

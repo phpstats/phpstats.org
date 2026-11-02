@@ -192,7 +192,7 @@
                 },
                 {
                     "id": "choosing-where-to-compute",
-                    "text": "Choosing where to compute",
+                    "text": "Server or browser computation",
                     "level": 2
                 },
                 {
@@ -239,7 +239,7 @@
             "headings": [
                 {
                     "id": "vega-lite-does-the-drawing",
-                    "text": "Vega-Lite does the drawing",
+                    "text": "Rendering with Vega-Lite",
                     "level": 2
                 },
                 {
@@ -820,12 +820,12 @@
             "headings": [
                 {
                     "id": "install",
-                    "text": "Install",
+                    "text": "Installation",
                     "level": 2
                 },
                 {
                     "id": "what-phiz-covers",
-                    "text": "What phiz covers",
+                    "text": "Features",
                     "level": 2
                 },
                 {
@@ -888,7 +888,7 @@
             "headings": [
                 {
                     "id": "sizes-to-expect",
-                    "text": "Sizes to expect",
+                    "text": "Size guidance",
                     "level": 2
                 },
                 {
@@ -898,7 +898,7 @@
                 },
                 {
                     "id": "tables-stay-columnar",
-                    "text": "Tables stay columnar",
+                    "text": "Columnar tables",
                     "level": 2
                 },
                 {
