@@ -1,6 +1,6 @@
 <?php
 
-// The phpstats family. Keys are the URL paths (phpstats.org/{key}).
+// The PHPstats family. Keys are the URL paths (phpstats.org/{key}).
 // Status kinds: working, exists, in-progress, experimental.
 // docs is null until the project publishes a reference site.
 // links (optional) adds more documentation links, as label => URL.
@@ -14,9 +14,9 @@ return [
         'status' => 'working',
         'status_label' => 'Working',
         'repo' => 'https://github.com/phpstats/phit',
-        'docs' => 'https://phpstats.github.io/phit/',
+        'docs' => 'https://phit.phpstats.org/docs/',
         'overview' => [
-            'Fit statistical models, compute probability distributions, and summarize data in PHP. Model functions accept formulas or explicit designs and return PHP arrays.',
+            'Fit statistical models, compute probability distributions, and summarize data in PHP. Model functions accept formulas or explicit designs and return read-only fit objects that print their summaries and support array access.',
         ],
         // The overview's capabilities: two lists side by side, then one full
         // width, in inline Markdown. Each heading links the docs nav's
@@ -82,12 +82,12 @@ return [
         'from_r' => 'tibble and readr',
         'summary' => 'Immutable, typed data frames for PHP.',
         'status' => 'working',
-        'status_label' => 'Released, v0.3.0',
+        'status_label' => 'Released',
         'repo' => 'https://github.com/phpstats/phibble',
-        'docs' => 'https://phpstats.github.io/phibble/',
+        'docs' => 'https://phibble.phpstats.org/docs/',
         'links' => [
-            'Laravel integration' => 'https://phpstats.github.io/phibble/laravel.html',
-            'Release notes' => 'https://github.com/phpstats/phibble/releases/tag/v0.3.0',
+            'Laravel integration' => 'https://phibble.phpstats.org/docs/laravel',
+            'Release notes' => 'https://github.com/phpstats/phibble/releases',
         ],
         'overview' => [
             'Load, transform, and summarize typed data frames in PHP. Tables are immutable, and null represents missing data.',
@@ -101,14 +101,14 @@ return [
         'from_r' => 'dplyr and tidyr',
         'summary' => 'dplyr, tidyr, and janitor data wrangling in PHP.',
         'status' => 'working',
-        'status_label' => 'Released, v0.3.0',
+        'status_label' => 'Released',
         'repo' => 'https://github.com/phpstats/phplyr',
-        'docs' => 'https://phpstats.github.io/phplyr/',
+        'docs' => 'https://phplyr.phpstats.org/docs/',
         'links' => [
-            'Getting started' => 'https://phpstats.github.io/phplyr/getting-started.html',
-            'Coming from dplyr' => 'https://phpstats.github.io/phplyr/coming-from-dplyr.html',
-            'Gallery' => 'https://phpstats.github.io/phplyr/gallery.html',
-            'Release notes' => 'https://github.com/phpstats/phplyr/releases/tag/v0.3.0',
+            'Getting started' => 'https://phplyr.phpstats.org/docs/getting-started',
+            'Coming from dplyr' => 'https://phplyr.phpstats.org/docs/coming-from-dplyr',
+            'Gallery' => 'https://phplyr.phpstats.org/docs/gallery',
+            'Release notes' => 'https://github.com/phpstats/phplyr/releases',
         ],
         'overview' => [
             'Filter, transform, join, and reshape tables with dplyr- and tidyr-style functions. Pipelines use PHP 8.5\'s pipe operator, or method chains on PHP 8.3 and 8.4.',
@@ -121,11 +121,11 @@ return [
         'from_r' => 'ggplot2',
         'summary' => 'ggplot2-style charts rendered with Vega-Lite.',
         'status' => 'working',
-        'status_label' => 'Released, v0.3.0',
+        'status_label' => 'Released',
         'repo' => 'https://github.com/phpstats/phiz',
-        'docs' => 'https://phpstats.github.io/phiz/',
+        'docs' => 'https://phiz.phpstats.org/docs/',
         'links' => [
-            'Release notes' => 'https://github.com/phpstats/phiz/releases/tag/v0.3.0',
+            'Release notes' => 'https://github.com/phpstats/phiz/releases',
         ],
         'overview' => [
             'Build charts in PHP with data, mappings, and layers. Render interactive charts with Vega-Lite or export static images.',
@@ -140,9 +140,9 @@ return [
         'status' => 'working',
         'status_label' => 'Working, PIE-packaged',
         'repo' => 'https://github.com/phpstats/phpolars',
-        'docs' => 'https://phpstats.github.io/phpolars/',
+        'docs' => 'https://phpolars.phpstats.org/docs/',
         'links' => [
-            'Performance' => 'https://phpstats.github.io/phpolars/performance.html',
+            'Performance' => 'https://phpolars.phpstats.org/docs/performance',
         ],
         'overview' => [
             'Query and transform data with Polars from PHP. Use eager data frames or build lazy queries with expressions.',
@@ -174,7 +174,7 @@ return [
         'status' => 'working',
         'status_label' => 'Working',
         'repo' => 'https://github.com/phpstats/cmdstanphp',
-        'docs' => 'https://phpstats.github.io/CmdStanPHP/',
+        'docs' => 'https://cmdstanphp.phpstats.org/docs/',
         'overview' => [
             'Compile Stan models, run Bayesian inference, and inspect posterior draws from PHP. CmdStanPHP runs Stan programs through CmdStan and needs no R installation.',
             'It supports compilation, parallel MCMC, optimization, ADVI, Pathfinder, and Laplace approximation, along with posterior summaries and fit persistence.',

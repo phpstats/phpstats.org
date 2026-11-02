@@ -34,10 +34,10 @@ return [
      * without an entry show the overview from config/projects.php only.
      */
     'content' => [
-        'phibble' => ['repo' => 'phpstats/phibble', 'ref' => '1c14bd9145ca8e00de65450d925d6536c2bc709a'],
+        'phibble' => ['repo' => 'phpstats/phibble', 'ref' => '3bfdff1dc605dd01f8bee37615c1f2b698e7f022'],
         'phpolars' => ['repo' => 'phpstats/phpolars', 'ref' => '5a73b2b944b5c465beacef7febe06b4cdad95bf5'],
-        'phplyr' => ['repo' => 'phpstats/phplyr', 'ref' => 'c597df9726a5607c72c58524b1f0ba7c11c7aacb'],
-        'phit' => ['repo' => 'phpstats/phit', 'ref' => '1eee44af8734a90ba616a3344179f763e37a9cdf'],
+        'phplyr' => ['repo' => 'phpstats/phplyr', 'ref' => '1f7344c78013fd17d6e05233a60658e52a55a123'],
+        'phit' => ['repo' => 'phpstats/phit', 'ref' => '370d3cc2a7b5e9a0a9d1bc9a8c2448601e8b6e7f'],
         'phiz' => ['repo' => 'phpstats/phiz', 'ref' => '5e62d2f2e9c332b4fb35619316b8559fa5a3cac1'],
         'cmdstanphp' => ['repo' => 'phpstats/CmdStanPHP', 'ref' => '177917c4a7866da9d7415e189482125bd5722462'],
         'juphyter' => ['repo' => 'phpstats/juphyter', 'ref' => 'edf6ce99e021810ba468217bcb4dcd0923158eb1'],

@@ -56,6 +56,7 @@ The source of every package and of this site is in the
 [PHPstats organization on GitHub](https://github.com/phpstats). The site and
 every package except CmdStanPHP are released under the MIT license.
 CmdStanPHP is released under the GNU General Public License, version 3 or
-later, because parts of it follow GPL-licensed R packages. Each repository's
-THIRD_PARTY_NOTICES.md lists the code that follows other projects, with their
-licenses.
+later, because parts of it follow GPL-licensed R packages. The repositories'
+third-party notices list the code that follows other projects, with its
+licenses. phpolars includes its compiled dependencies' notices in each release
+archive as THIRD_PARTY_NOTICES.txt.

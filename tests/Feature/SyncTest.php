@@ -636,7 +636,12 @@ class SyncTest extends TestCase
     /** Overview and docs pages don't print the pinned commit. */
     public function test_pages_do_not_print_the_pinned_commit(): void
     {
-        config(['phpstats.content_path' => $this->realContent]);
+        // Keep pinned provenance in this fixture even after a local site:sync --from.
+        File::copyDirectory("{$this->realContent}/phplyr", "{$this->content}/phplyr");
+        File::put("{$this->content}/phplyr/sync.json", json_encode([
+            'repo' => 'phpstats/phplyr',
+            'commit' => str_repeat('a', 40),
+        ]));
         Package::flush();
         $package = Package::find('phplyr');
         $commit = substr($package->sync()['commit'], 0, 7);
