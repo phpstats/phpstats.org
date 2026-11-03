@@ -78,6 +78,42 @@ class Example
     }
 
     /**
+     * What each step of an example printed, in the order of its "// ---"
+     * lines, computed once per request. The script runs as one, so later
+     * steps see the variables of earlier ones; what the setup above the
+     * first line prints is dropped.
+     *
+     * @return list<string>
+     */
+    public static function runSteps(string $name): array
+    {
+        $path = self::path($name);
+        $key = $path.'#steps';
+        if (array_key_exists($key, self::$results)) {
+            return self::$results[$key];
+        }
+        self::$runs[$path] = (self::$runs[$path] ?? 0) + 1;
+
+        $marker = '<<<phpstats:step>>>';
+        $source = preg_replace('/^<\?php\s*/', '', file_get_contents($path));
+        $source = preg_replace('/^\/\/ ---\n/m', "echo '{$marker}';\n", $source);
+
+        $cwd = getcwd();
+        ob_start();
+        try {
+            (static fn () => eval(func_get_arg(0)))($source);
+        } finally {
+            $printed = ob_get_clean();
+            chdir($cwd);
+        }
+
+        $parts = explode($marker, $printed);
+        array_shift($parts);
+
+        return self::$results[$key] = array_map(trim(...), $parts);
+    }
+
+    /**
      * The example's result as rendered HTML, computed once and then cached
      * until the example file changes. $render receives the result; $result
      * computes it, for the examples whose result is stored rather than run.

@@ -60,6 +60,16 @@ class LandingPageTest extends TestCase
         $this->assertStringContainsString('->embed()', $steps[2]);
         $this->assertStringContainsString('id="together"', $html);
 
+        // Each step sits beside what it printed, where the extensions are loaded.
+        if (function_exists('Phpolars\scan_csv') && function_exists('Phit\fit_mixed_gaussian')) {
+            $outputs = Example::runSteps('together/schools');
+            $this->assertCount(3, $outputs);
+            $this->assertStringContainsString('study_hours', $outputs[0]);
+            $this->assertStringContainsString('Linear mixed model fit by REML', $outputs[1]);
+            $this->assertStringContainsString('data-phiz=', $outputs[2]);
+            $this->assertStringContainsString('Linear mixed model fit by REML', $html);
+        }
+
         // Verification compares the values its code gives with the stored
         // references, and links each record's topic page.
         $phit = Package::find('phit');
