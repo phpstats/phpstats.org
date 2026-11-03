@@ -17,7 +17,7 @@
                    class="hidden whitespace-nowrap rounded-lg px-3 py-1.5 hover:bg-white/10 hover:text-white aria-[current]:text-white md:block">{{ $page['label'] }}</a>
             @endforeach
             <x-theme-toggle :dark="true" />
-            <a href="https://github.com/phpstats" class="rounded-lg p-2 hover:bg-white/10 hover:text-white" aria-label="PHPstats on GitHub"><x-github-icon /></a>
+            <a href="https://github.com/phpstats" class="rounded-lg p-2 max-[419px]:hidden hover:bg-white/10 hover:text-white" aria-label="PHPstats on GitHub"><x-github-icon /></a>
         </div>
     </nav>
 

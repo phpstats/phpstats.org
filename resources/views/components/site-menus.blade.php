@@ -2,13 +2,14 @@
 @props(['current' => null, 'dark' => false])
 
 <a href="{{ route('home') }}" @class([
-    'flex shrink-0 items-center gap-2 rounded-lg py-1.5 pr-2 text-sm font-semibold',
+    'flex shrink-0 items-center rounded-lg py-1.5 pr-2 text-sm font-semibold',
+    'flex-col gap-0 min-[420px]:flex-row min-[420px]:gap-2' => ! $current,
+    'gap-2' => $current,
     'text-white' => $dark,
     'text-zinc-900 dark:text-white' => ! $dark,
 ]) aria-label="PHPstats home">
     <x-logo :size="28" />
-    {{-- On the narrowest screens the mark alone keeps the bar from overflowing; the link keeps its label. --}}
-    <span @class(['hidden sm:inline' => $current, 'max-[419px]:sr-only' => ! $current])>PHPstats</span>
+    <span @class(['hidden sm:inline' => $current, 'text-xs leading-tight min-[420px]:text-sm' => ! $current])>PHPstats</span>
 </a>
 {{-- The menus fill the space between the mark and the bar's links, centered in it. --}}
 <div class="flex min-w-0 flex-1 items-center justify-center">
