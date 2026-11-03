@@ -7,6 +7,7 @@
 
         <div class="mx-auto grid max-w-7xl items-center gap-10 lg:items-stretch px-4 pb-14 pt-12 *:min-w-0 sm:px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-12 lg:px-8 lg:pb-16 lg:pt-16">
             <div>
+                <p class="mb-3 font-mono text-sm font-semibold tracking-wide text-php-300 sm:hidden">PHPstats</p>
                 <h1 class="text-4xl font-semibold tracking-tight sm:text-6xl">
                     Modern statistical computing
                     <span class="block bg-gradient-to-r from-php-300 via-violet-300 to-fuchsia-300 bg-clip-text text-transparent">for PHP</span>
