@@ -378,6 +378,24 @@ pre,
     clip: rect(0 0 0 0);
 }
 
+.package-section-link {
+    position: relative;
+}
+.package-section-link::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0.75rem;
+    bottom: -1px;
+    height: 2px;
+    border-radius: 9999px;
+    background-color: var(--l500);
+    opacity: 0;
+    transition: opacity 150ms;
+}
+.package-section-link:is(:hover, :focus-visible, [aria-current="page"])::after {
+    opacity: 1;
+}
+
 /* Source code wraps within the landing page's panels. Printed output keeps
    its columns and scrolls within its own panel. */
 .landing pre {

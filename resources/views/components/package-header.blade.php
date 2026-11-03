@@ -31,13 +31,12 @@
         <a href="{{ route('home') }}" class="shrink-0 rounded-lg py-1.5 pr-1" aria-label="PHPstats home"><x-logo :size="28" /></a>
         <a href="{{ $package->url() }}" class="rounded-lg px-2 py-1.5 font-mono text-base font-semibold text-zinc-900 hover:bg-zinc-100 dark:text-white dark:hover:bg-white/5">{{ $package->name() }}</a>
 
-        <nav class="ml-6 hidden items-center gap-1 text-sm lg:flex" aria-label="{{ $package->name() }} sections">
+        <nav class="ml-6 hidden h-full items-stretch gap-1 text-sm lg:flex" aria-label="{{ $package->name() }} sections">
             @foreach ($sections as $key => $label)
                 @php $external = $key === 'docs' && ! $package->hasDocs(); @endphp
                 <a href="{{ $external ? $package->externalDocs() : $package->url($key) }}" @if ($active === $key) aria-current="page" @endif
-                   class="relative whitespace-nowrap rounded-lg px-3 py-1.5 text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-900 aria-[current]:text-(--l700) dark:text-zinc-400 dark:hover:bg-white/5 dark:hover:text-white dark:aria-[current]:text-(--l300)">
+                   class="package-section-link inline-flex items-center whitespace-nowrap px-3 py-1.5 text-zinc-600 transition hover:text-(--l700) focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-(--l500) aria-[current]:text-(--l700) dark:text-zinc-400 dark:hover:text-(--l300) dark:aria-[current]:text-(--l300)">
                     {{ $label }}@if ($external)<x-heroicon-m-arrow-up-right class="ml-0.5 inline size-3 opacity-60" />@endif
-                    @if ($active === $key)<span class="absolute inset-x-3 -bottom-3 h-0.5 rounded-full bg-(--l500)"></span>@endif
                 </a>
             @endforeach
         </nav>
@@ -53,10 +52,10 @@
     </div>
 
     {{-- Sections on small screens --}}
-    <nav class="flex flex-wrap gap-1 border-t border-zinc-100 px-3 py-1.5 text-sm lg:hidden dark:border-white/5" aria-label="{{ $package->name() }} sections">
+    <nav class="flex flex-wrap gap-1 border-t border-zinc-100 px-3 text-sm lg:hidden dark:border-white/5" aria-label="{{ $package->name() }} sections">
         @foreach ($sections as $key => $label)
             <a href="{{ $key === 'docs' && ! $package->hasDocs() ? $package->externalDocs() : $package->url($key) }}" @if ($active === $key) aria-current="page" @endif
-               class="shrink-0 rounded-md px-2.5 py-1 text-zinc-600 aria-[current]:bg-(--l50) aria-[current]:font-medium aria-[current]:text-(--l700) dark:text-zinc-400 dark:aria-[current]:bg-(--l400)/10 dark:aria-[current]:text-(--l300)">{{ $label }}</a>
+               class="package-section-link shrink-0 px-2.5 py-2.5 text-zinc-600 transition hover:text-(--l700) focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-(--l500) aria-[current]:text-(--l700) dark:text-zinc-400 dark:hover:text-(--l300) dark:aria-[current]:text-(--l300)">{{ $label }}</a>
         @endforeach
     </nav>
 </header>
