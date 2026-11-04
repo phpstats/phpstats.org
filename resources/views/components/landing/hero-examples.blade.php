@@ -37,6 +37,11 @@
 @if ($slides !== [])
 <div x-data="heroCarousel({{ count($slides) }})" x-on:mouseenter="paused = true" x-on:mouseleave="paused = false" x-on:focusin="paused = true" x-on:focusout="paused = false" x-on:touchstart.passive="stop()"
      role="region" aria-roledescription="carousel" aria-label="Examples" class="code-ink flex h-full flex-col overflow-hidden rounded-xl shadow-2xl shadow-black/40 ring-1 ring-white/10">
+    <h2 class="grid border-b border-white/5 px-4 py-3 text-sm font-bold text-white" aria-live="polite">
+        @foreach ($slides as $slide)
+            <span x-bind:class="{ invisible: current !== {{ $loop->index }} }" @class(['[grid-area:1/1]', 'invisible' => ! $loop->first])>{{ $slide['title'] }}</span>
+        @endforeach
+    </h2>
     {{-- On wide screens, shared grid cells keep the height of the tallest slide. --}}
     <div class="relative grid flex-1">
         @foreach ($slides as $name => $slide)
@@ -95,12 +100,7 @@
             </div>
         @endforeach
     </div>
-    <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-t border-white/5 px-4 py-2">
-        <div class="grid text-xs font-medium text-zinc-300" aria-live="polite">
-            @foreach ($slides as $slide)
-                <span x-bind:class="{ invisible: current !== {{ $loop->index }} }" @class(['[grid-area:1/1]', 'invisible' => ! $loop->first])>{{ $slide['title'] }}</span>
-            @endforeach
-        </div>
+    <div class="flex items-center justify-end border-t border-white/5 px-4 py-2">
         @if (count($slides) > 1)
             <div class="flex items-center gap-3">
                 <button type="button" x-on:click="show(current - 1)" aria-label="Previous example" class="flex size-11 items-center justify-center rounded-md text-zinc-400 transition hover:bg-white/10 hover:text-white sm:size-6">
