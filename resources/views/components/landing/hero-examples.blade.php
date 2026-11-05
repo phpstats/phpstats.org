@@ -100,7 +100,7 @@
             </div>
         @endforeach
     </div>
-    <div class="flex items-center justify-end border-t border-white/5 px-4 py-2">
+    <div class="flex items-center justify-center border-t border-white/5 px-4 py-2">
         @if (count($slides) > 1)
             <div class="flex items-center gap-3">
                 <button type="button" x-on:click="show(current - 1)" aria-label="Previous example" class="flex size-11 items-center justify-center rounded-md text-zinc-400 transition hover:bg-white/10 hover:text-white sm:size-6">
