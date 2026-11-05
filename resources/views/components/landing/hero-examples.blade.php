@@ -11,7 +11,7 @@
     $examples = [
         'temperatures' => ['title' => 'Summarize and chart data', 'outputs' => ['monthly' => 'Data frame', 'chart' => 'Chart'], 'files' => ['daily-temperatures.csv']],
         'polars' => ['title' => 'Query a CSV file with Polars', 'outputs' => ['printed' => 'Table'], 'files' => ['daily-temperatures.csv']],
-        'model' => ['title' => 'Fit a logistic regression', 'outputs' => ['printed' => 'Coefficients'], 'files' => []],
+        'model' => ['title' => 'Fit a logistic regression', 'outputs' => ['printed' => 'Model summary'], 'files' => []],
         'gamma' => ['title' => 'Work with probability distributions', 'outputs' => ['printed' => 'Chart'], 'files' => []],
     ];
     $slides = [];
