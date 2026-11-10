@@ -530,6 +530,7 @@ class PackagePagesTest extends TestCase
             $this->assertStringContainsString('<code>'.$function.'()</code>', $html);
             $this->assertArrayHasKey($function, $phit->functionUrls());
         }
+        $this->assertStringContainsString('Newey–West covariance for OLS and IV', $html);
         $this->assertStringContainsString('md:grid-cols-2', $html);
         $this->assertStringNotContainsString('Every function is in the Phit namespace', $html);
         foreach (array_merge($capabilities['columns'], [$capabilities['other']]) as $list) {
