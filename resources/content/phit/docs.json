@@ -31,7 +31,7 @@
             "section": "Guides"
         },
         {
-            "title": "Linear and generalized linear models",
+            "title": "Regression models",
             "path": "models",
             "section": "Guides"
         },
@@ -1488,7 +1488,7 @@
             "math": false
         },
         "models": {
-            "title": "Linear and generalized linear models",
+            "title": "Regression models",
             "headings": [
                 {
                     "id": "families-and-links",
