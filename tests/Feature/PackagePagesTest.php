@@ -526,6 +526,10 @@ class PackagePagesTest extends TestCase
         $this->assertSame('Other functions', $capabilities['other']['heading']);
         $html = $this->get($phit->url())->assertOk()->getContent();
         $this->assertStringContainsString('<code>fit_mixed_gaussian()</code>', $html);
+        foreach (['fit_iv', 'fit_ridge', 'cv_ridge'] as $function) {
+            $this->assertStringContainsString('<code>'.$function.'()</code>', $html);
+            $this->assertArrayHasKey($function, $phit->functionUrls());
+        }
         $this->assertStringContainsString('md:grid-cols-2', $html);
         $this->assertStringNotContainsString('Every function is in the Phit namespace', $html);
         foreach (array_merge($capabilities['columns'], [$capabilities['other']]) as $list) {

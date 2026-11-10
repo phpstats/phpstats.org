@@ -769,6 +769,11 @@
                     "id": "verification",
                     "text": "Verification",
                     "level": 2
+                },
+                {
+                    "id": "instrumental-variable-formulas",
+                    "text": "Instrumental-variable formulas",
+                    "level": 2
                 }
             ],
             "math": false
@@ -989,6 +994,21 @@
                 {
                     "id": "fit_ols",
                     "text": "fit_ols()",
+                    "level": 3
+                },
+                {
+                    "id": "fit_iv",
+                    "text": "fit_iv()",
+                    "level": 3
+                },
+                {
+                    "id": "fit_ridge",
+                    "text": "fit_ridge()",
+                    "level": 3
+                },
+                {
+                    "id": "cv_ridge",
+                    "text": "cv_ridge()",
                     "level": 3
                 },
                 {
@@ -1509,6 +1529,16 @@
                     "id": "differences-from-r",
                     "text": "Differences from R",
                     "level": 2
+                },
+                {
+                    "id": "instrumental-variable-models",
+                    "text": "Instrumental-variable models",
+                    "level": 2
+                },
+                {
+                    "id": "ridge-regression",
+                    "text": "Ridge regression",
+                    "level": 2
                 }
             ],
             "math": false
@@ -1933,6 +1963,16 @@
                     "id": "reproduce",
                     "text": "Reproduce",
                     "level": 2
+                },
+                {
+                    "id": "two-stage-least-squares",
+                    "text": "Two-stage least squares",
+                    "level": 2
+                },
+                {
+                    "id": "ridge",
+                    "text": "Ridge",
+                    "level": 2
                 }
             ],
             "math": false
@@ -1988,6 +2028,16 @@
                 {
                     "id": "implementation-notes",
                     "text": "Implementation notes",
+                    "level": 2
+                },
+                {
+                    "id": "iv-fit-contract",
+                    "text": "IV fit contract",
+                    "level": 2
+                },
+                {
+                    "id": "ridge-and-cross-validation",
+                    "text": "Ridge and cross-validation",
                     "level": 2
                 }
             ],

@@ -29,6 +29,9 @@ return [
                     'docs' => 'functions/models',
                     'items' => [
                         'OLS: `fit_ols()`',
+                        'Instrumental variables by two-stage least squares, with first-stage and weak-instrument diagnostics: `fit_iv()`',
+                        'Ridge regression with coefficient bounds and zero penalty factors: `fit_ridge()`',
+                        'Weighted cross-validation for ridge, including caller-supplied folds: `cv_ridge()`',
                         'Logistic regression: `fit_generalized_linear(family: \'binomial\')`',
                         'Probit regression: `fit_generalized_linear(family: \'binomial\', link: \'probit\')`',
                         'Poisson regression: `fit_generalized_linear(family: \'poisson\')`',

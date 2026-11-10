@@ -739,6 +739,16 @@ fitted[0] 1.3461538461538</code></pre>
 </tbody>
 </table>
 <p>Inputs are <code>Vec&lt;Vec&lt;f64&gt;&gt;</code> and <code>Vec&lt;f64&gt;</code>, and every function returns <code>Result&lt;_, StatsError&gt;</code>. Rust group IDs are <code>usize</code> values, and the binding keeps the PHP labels.</p>
+</section>
+<section id="iv-fit-contract" class="level2">
+<h2 class="anchored" data-anchor-id="iv-fit-contract">IV fit contract</h2>
+<p><code>fit_iv(string $formula, mixed $data, string $missing = 'drop', mixed $weights = null, string|array $vcov = 'iid'): IvFit</code> uses a formula with a top-level IV bar. See <a href="phpstats://phit/docs/models#instrumental-variable-models">Instrumental-variable models</a>.</p>
+<p>It carries every linear-fit key plus <code>structural_formula</code>, <code>vcov</code>, <code>endogenous</code>, <code>instruments</code>, and <code>first_stage</code>. Each first stage has <code>f_statistic</code>, <code>df1</code>, <code>df2</code>, <code>p_value</code>, <code>partial_r_squared</code>, <code>shea_partial_r_squared</code>, <code>sw_f_statistic</code>, <code>sw_df1</code>, <code>sw_df2</code>, <code>sw_p_value</code>, and named <code>coefficients</code>. SW values may be null with an explicit diagnostic warning. The <code>diagnostics</code> array adds <code>wu_hausman</code> and <code>sargan</code>. <code>summary()</code>, <code>tidy()</code>, and <code>predict()</code> accept the fit or its array.</p>
+</section>
+<section id="ridge-and-cross-validation" class="level2">
+<h2 class="anchored" data-anchor-id="ridge-and-cross-validation">Ridge and cross-validation</h2>
+<p><code>fit_ridge(string $formula, mixed $data, float $lambda, array $penaltyFactor = [], bool $standardize = true, array $bounds = [], string $missing = 'drop', mixed $weights = null): RidgeFit</code> fits Gaussian ridge using explicit-lambda glmnet scaling. <code>penaltyFactor</code> and <code>bounds</code> map predictor names or glob patterns to factors and <code>[lower|null, upper|null]</code> pairs.</p>
+<p><code>cv_ridge(string $formula, mixed $data, ?array $lambda = null, ?array $foldid = null, int $nfolds = 10, int $seed = 0, array $penaltyFactor = [], bool $standardize = true, array $bounds = [], string $missing = 'drop', mixed $weights = null): array</code> returns the path, <code>cvm</code>, <code>cvsd</code>, <code>cvup</code>, <code>cvlo</code>, selected lambdas and zero-based indices, and <code>fit</code> at <code>lambda_min</code>. See <a href="phpstats://phit/docs/models#ridge-regression">ridge models</a> for scaling, conditional uncertainty, default paths, and weighted fold rules.</p>
 
 
 </section>
